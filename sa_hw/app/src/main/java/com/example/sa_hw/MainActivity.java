@@ -10,6 +10,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ListView;
 import android.widget.TextView;
 
 import static android.provider.BaseColumns._ID;
@@ -25,6 +26,7 @@ public class MainActivity extends AppCompatActivity {
     private Button button_update;
     private TextView text_view_id;
     private TextView text_view_id_data;
+    private ListView list_view_id_data;
     private FeedReaderDbHelper dbHelper;
     private SQLiteDatabase db;
     private EditText editTextTitle;
@@ -51,6 +53,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
         button_read = findViewById(R.id.button_read);
+        list_view_id_data = findViewById(R.id.list_view_id_data);
         button_read.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -120,6 +123,10 @@ public class MainActivity extends AppCompatActivity {
         }
         text_view_id_data.setMovementMethod(new ScrollingMovementMethod());
         text_view_id_data.setText(ContextData);
+
+        ListView list_view_id_data = (ListView) findViewById(R.id.list_view_id_data);
+        MyCursorAdapter myAdapter = new MyCursorAdapter(this, cursor);
+        list_view_id_data.setAdapter(myAdapter);
     }
 
     public void deleteData(String id){
