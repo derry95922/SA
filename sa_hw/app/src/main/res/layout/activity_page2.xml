@@ -10,12 +10,12 @@
         android:layout_height="match_parent"
         android:orientation="horizontal">
 
-        <RadioButton
-            android:id="@+id/Page2RadioButton"
-            android:layout_width="70dp"
+        <CheckBox
+            android:id="@+id/CheckBoxId"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="RadioButton" />
+            android:text="CheckBox" />
 
         <TextView
             android:id="@+id/Page2Title"

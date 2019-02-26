@@ -8,9 +8,13 @@ import android.os.Bundle;
 import android.text.method.ScrollingMovementMethod;
 import android.util.Log;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.ListView;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.TextView;
 
 import static android.provider.BaseColumns._ID;
@@ -32,6 +36,7 @@ public class MainActivity extends AppCompatActivity {
     private EditText editTextTitle;
     private EditText editTextSubtitle;
     private EditText editTextId;
+    private ListView CheckBoxId;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -61,6 +66,19 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        list_view_id_data.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Cursor item = (Cursor)parent.getAdapter().getItem(position);
+                item.moveToFirst();
+                Log.d("cursor",item.getString(0));
+                Log.d("cursor",item.getString(1));
+                Log.d("cursor",item.getString(2));
+
+                Log.d("click","click");
+            }
+        });
+
         button_delete = findViewById(R.id.button_delete);
         button_delete.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -68,6 +86,8 @@ public class MainActivity extends AppCompatActivity {
                 editTextId = findViewById(R.id.editTextId);
                 String id = editTextId.getText().toString().trim();
                 deleteData(id);
+
+
             }
         });
 
@@ -130,13 +150,19 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void deleteData(String id){
-        // Define 'where' part of query.
         String selection = _ID + " = ?";
-        // Specify arguments in placeholder order.
         String[] selectionArgs = { id };
-        // Issue SQL statement.
         int deletedRow = db.delete(TABLE_NAME, selection, selectionArgs);
         text_view_id.setText(id);
+    }
+
+    public void deleteDataByRadioButton(int position){
+//        RadioButton Page2RadioButton = findViewById(R.id.Page2RadioButton);
+        String selection = _ID + " = ?";
+
+        String[] selectionArgs = { Integer.toString(position) };
+        int deletedRow = db.delete(TABLE_NAME, selection, selectionArgs);
+        text_view_id.setText(String.valueOf(position));
     }
 
     public void updateData(String id){
