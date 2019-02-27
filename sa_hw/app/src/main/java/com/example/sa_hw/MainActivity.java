@@ -9,6 +9,7 @@ import android.text.method.ScrollingMovementMethod;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
@@ -16,6 +17,7 @@ import android.widget.ListView;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import static android.provider.BaseColumns._ID;
 import static com.example.sa_hw.FeedReaderContract.FeedEntry.COLUMN_NAME_SUBTITLE;
@@ -36,7 +38,8 @@ public class MainActivity extends AppCompatActivity {
     private EditText editTextTitle;
     private EditText editTextSubtitle;
     private EditText editTextId;
-    private ListView CheckBoxId;
+    private ListView listview;
+    private MyCursorAdapter myCursorAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,7 +47,6 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         dbHelper = new FeedReaderDbHelper(this);
-//        db = dbHelper.getWritableDatabase();
 
         text_view_id = findViewById(R.id.text_view_id);
         text_view_id_data = findViewById(R.id.text_view_id_data);
@@ -66,18 +68,58 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        list_view_id_data = findViewById(R.id.list_view_id_data);
+        db = dbHelper.getReadableDatabase();
+        Cursor cursor = db.rawQuery("SELECT * FROM " + TABLE_NAME,null);
+        myCursorAdapter = new MyCursorAdapter(this,cursor);
+        list_view_id_data.setAdapter(myCursorAdapter);
         list_view_id_data.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Cursor item = (Cursor)parent.getAdapter().getItem(position);
-                item.moveToFirst();
-                Log.d("cursor",item.getString(0));
-                Log.d("cursor",item.getString(1));
-                Log.d("cursor",item.getString(2));
-
-                Log.d("click","click");
+            public void onItemClick(AdapterView<?> list_view_id_data, View view, int position, long id) {
+                Cursor cursor = (Cursor) list_view_id_data.getItemAtPosition(position);
+//                cursor.moveToFirst();
+                Log.d("click",cursor.getString(1));
+                Log.d("click",cursor.getString(2));
+                Log.d("click",Integer.toString(position));
+//                int id = cursor.getInt(0);
+//                String title = cursor.getString(1);
+//                String subtitle = cursor.getString(2);
+//                Log.d("content","id: "+id+" title: "+title+" subtitle: "+subtitle);
             }
         });
+//        list_view_id_data = findViewById(R.id.list_view_id_data);
+//        db = dbHelper.getReadableDatabase();
+//        Cursor cursor = db.rawQuery("SELECT * FROM " + TABLE_NAME, null);
+//        myCursorAdapter = new MyCursorAdapter(this,cursor);
+//        list_view_id_data.setAdapter(myCursorAdapter);
+//        list_view_id_data.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+//            @Override
+//            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+//                Cursor cursor = (Cursor) parent.getItemAtPosition(position);
+//                cursor.moveToFirst();
+//                Log.d("cursor",cursor.getString(0));
+//                Log.d("cursor",cursor.getString(1));
+//
+//                Cursor item = (Cursor)parent.getAdapter().getItem(position);
+//                item.moveToFirst();
+//                Log.d("cursor",item.getString(0));
+//                Log.d("cursor",item.getString(1));
+//
+//                Toast.makeText(getApplicationContext(), position, Toast.LENGTH_SHORT).show();
+//            }
+//        });
+//        list_view_id_data.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+//            @Override
+//            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+//                Cursor item = (Cursor)parent.getAdapter().getItem(position);
+//                item.moveToFirst();
+//                Log.d("cursor",item.getString(0));
+//                Log.d("cursor",item.getString(1));
+//                Log.d("cursor",item.getString(2));
+//
+//                Log.d("click","click");
+//            }
+//        });
 
         button_delete = findViewById(R.id.button_delete);
         button_delete.setOnClickListener(new View.OnClickListener() {
@@ -86,8 +128,6 @@ public class MainActivity extends AppCompatActivity {
                 editTextId = findViewById(R.id.editTextId);
                 String id = editTextId.getText().toString().trim();
                 deleteData(id);
-
-
             }
         });
 
@@ -103,7 +143,6 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void createData(){
-        // Create a new map of values, where column names are the keys
         db = dbHelper.getWritableDatabase();
         ContentValues values = new ContentValues();
         editTextTitle = findViewById(R.id.editTextTitle);
@@ -113,7 +152,6 @@ public class MainActivity extends AppCompatActivity {
         values.put(COLUMN_NAME_TITLE, title);
         values.put(COLUMN_NAME_SUBTITLE, subtitle);
 
-        // Insert the new row, returning the primary key value of the new row
         long newRowId = db.insert(TABLE_NAME, null, values);
 
         text_view_id.setText(String.valueOf(newRowId));
@@ -132,17 +170,7 @@ public class MainActivity extends AppCompatActivity {
             Log.d("content","id: "+id+" title: "+title+" subtitle: "+subtitle);
             cursor.moveToNext();
         }
-        cursor.moveToFirst();
-        String ContextData = "";
-        for(int i=0;i<rows_num;i++){
-            int id = cursor.getInt(0);
-            String title = cursor.getString(1);
-            String subtitle = cursor.getString(2);
-            ContextData += " ID : " + id + " Title : " +title + " Subtitle : " + subtitle + "\n";
-            cursor.moveToNext();
-        }
         text_view_id_data.setMovementMethod(new ScrollingMovementMethod());
-        text_view_id_data.setText(ContextData);
 
         ListView list_view_id_data = (ListView) findViewById(R.id.list_view_id_data);
         MyCursorAdapter myAdapter = new MyCursorAdapter(this, cursor);
@@ -157,7 +185,6 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void deleteDataByRadioButton(int position){
-//        RadioButton Page2RadioButton = findViewById(R.id.Page2RadioButton);
         String selection = _ID + " = ?";
 
         String[] selectionArgs = { Integer.toString(position) };
@@ -177,7 +204,6 @@ public class MainActivity extends AppCompatActivity {
         values.put(COLUMN_NAME_TITLE, title);
         values.put(COLUMN_NAME_SUBTITLE,subtitle);
 
-        // Which row to update, based on the title
         String selection = _ID + " = ?";
         String[] selectionArgs = { id };
 
