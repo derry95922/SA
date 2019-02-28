@@ -9,13 +9,14 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 
-import static com.example.sa_hw.FeedReaderContract.FeedEntry.COLUMN_COURSE_INTRO;
-import static com.example.sa_hw.FeedReaderContract.FeedEntry.COLUMN_COURSE_NAME;
-import static com.example.sa_hw.FeedReaderContract.FeedEntry.COLUMN_COURSE_NOTICE;
-import static com.example.sa_hw.FeedReaderContract.FeedEntry.COLUMN_COURSE_PRICE;
-import static com.example.sa_hw.FeedReaderContract.FeedEntry.COLUMN_COURSE_REMARK;
-import static com.example.sa_hw.FeedReaderContract.FeedEntry.COLUMN_COURSE_SUITABLE;
+import static com.example.sa_hw.FeedReaderContract.FeedEntry.COLUMN_NAME_COURSEINTRO;
+import static com.example.sa_hw.FeedReaderContract.FeedEntry.COLUMN_NAME_COURSENAME;
+import static com.example.sa_hw.FeedReaderContract.FeedEntry.COLUMN_NAME_COURSENOTICE;
+import static com.example.sa_hw.FeedReaderContract.FeedEntry.COLUMN_NAME_COURSEPRICE;
+import static com.example.sa_hw.FeedReaderContract.FeedEntry.COLUMN_NAME_COURSEREMARK;
+import static com.example.sa_hw.FeedReaderContract.FeedEntry.COLUMN_NAME_COURSESUITABLE;
 import static com.example.sa_hw.FeedReaderContract.FeedEntry.TABLE_NAME;
 
 public class InfoData extends AppCompatActivity {
@@ -29,6 +30,7 @@ public class InfoData extends AppCompatActivity {
     private EditText coursePrice;
     private EditText courseNotice;
     private EditText courseRemark;
+    private TextView text_view_id;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -62,12 +64,12 @@ public class InfoData extends AppCompatActivity {
         String notice = courseIntro.getText().toString().trim();
         String remark = courseIntro.getText().toString().trim();
 
-        values.put(COLUMN_COURSE_NAME, name);
-        values.put(COLUMN_COURSE_INTRO, introduction);
-        values.put(COLUMN_COURSE_SUITABLE, suitable);
-        values.put(COLUMN_COURSE_PRICE, price);
-        values.put(COLUMN_COURSE_NOTICE, notice);
-        values.put(COLUMN_COURSE_REMARK, remark);
+        values.put(COLUMN_NAME_COURSENAME, name);
+        values.put(COLUMN_NAME_COURSEINTRO, introduction);
+        values.put(COLUMN_NAME_COURSESUITABLE, suitable);
+        values.put(COLUMN_NAME_COURSEPRICE, price);
+        values.put(COLUMN_NAME_COURSENOTICE, notice);
+        values.put(COLUMN_NAME_COURSEREMARK, remark);
 
 
         long newRowId = db.insert(TABLE_NAME, null, values);
