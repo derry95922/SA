@@ -1,6 +1,7 @@
 package com.example.sa_hw;
 
 import android.content.ContentValues;
+import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.support.v7.app.AppCompatActivity;
@@ -19,10 +20,10 @@ import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import static android.provider.BaseColumns._ID;
-import static com.example.sa_hw.FeedReaderContract.FeedEntry.COLUMN_NAME_SUBTITLE;
-import static com.example.sa_hw.FeedReaderContract.FeedEntry.COLUMN_NAME_TITLE;
-import static com.example.sa_hw.FeedReaderContract.FeedEntry.TABLE_NAME;
+//import static android.provider.BaseColumns._ID;
+//import static com.example.sa_hw.FeedReaderContract.FeedEntry.COLUMN_NAME_SUBTITLE;
+//import static com.example.sa_hw.FeedReaderContract.FeedEntry.COLUMN_NAME_TITLE;
+//import static com.example.sa_hw.FeedReaderContract.FeedEntry.TABLE_NAME;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -38,8 +39,10 @@ public class MainActivity extends AppCompatActivity {
     private EditText editTextTitle;
     private EditText editTextSubtitle;
     private EditText editTextId;
-    private ListView listview;
     private MyCursorAdapter myCursorAdapter;
+    //------------------------------------------------------
+    private Button buttonCreate;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,7 +55,7 @@ public class MainActivity extends AppCompatActivity {
         text_view_id_data = findViewById(R.id.text_view_id_data);
         button_insert = findViewById(R.id.button_insert);
 
-        button_insert.setOnClickListener(new View.OnClickListener() {
+        /*button_insert.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 createData();
@@ -77,49 +80,11 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> list_view_id_data, View view, int position, long id) {
                 Cursor cursor = (Cursor) list_view_id_data.getItemAtPosition(position);
-//                cursor.moveToFirst();
                 Log.d("click",cursor.getString(1));
                 Log.d("click",cursor.getString(2));
                 Log.d("click",Integer.toString(position));
-//                int id = cursor.getInt(0);
-//                String title = cursor.getString(1);
-//                String subtitle = cursor.getString(2);
-//                Log.d("content","id: "+id+" title: "+title+" subtitle: "+subtitle);
             }
         });
-//        list_view_id_data = findViewById(R.id.list_view_id_data);
-//        db = dbHelper.getReadableDatabase();
-//        Cursor cursor = db.rawQuery("SELECT * FROM " + TABLE_NAME, null);
-//        myCursorAdapter = new MyCursorAdapter(this,cursor);
-//        list_view_id_data.setAdapter(myCursorAdapter);
-//        list_view_id_data.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-//            @Override
-//            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-//                Cursor cursor = (Cursor) parent.getItemAtPosition(position);
-//                cursor.moveToFirst();
-//                Log.d("cursor",cursor.getString(0));
-//                Log.d("cursor",cursor.getString(1));
-//
-//                Cursor item = (Cursor)parent.getAdapter().getItem(position);
-//                item.moveToFirst();
-//                Log.d("cursor",item.getString(0));
-//                Log.d("cursor",item.getString(1));
-//
-//                Toast.makeText(getApplicationContext(), position, Toast.LENGTH_SHORT).show();
-//            }
-//        });
-//        list_view_id_data.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-//            @Override
-//            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-//                Cursor item = (Cursor)parent.getAdapter().getItem(position);
-//                item.moveToFirst();
-//                Log.d("cursor",item.getString(0));
-//                Log.d("cursor",item.getString(1));
-//                Log.d("cursor",item.getString(2));
-//
-//                Log.d("click","click");
-//            }
-//        });
 
         button_delete = findViewById(R.id.button_delete);
         button_delete.setOnClickListener(new View.OnClickListener() {
@@ -139,9 +104,19 @@ public class MainActivity extends AppCompatActivity {
                 String id = editTextId.getText().toString().trim();
                 updateData(id);
             }
-        });
-    }
+        });*/
 
+        //------------------------------------------------------
+        buttonCreate = findViewById(R.id.buttonCreate);
+        buttonCreate.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openActivityInfoData();
+            }
+        });
+
+    }
+/*
     public void createData(){
         db = dbHelper.getWritableDatabase();
         ContentValues values = new ContentValues();
@@ -214,5 +189,11 @@ public class MainActivity extends AppCompatActivity {
                 selectionArgs);
 
         text_view_id.setText(id);
+    }*/
+
+    //-------------------------------------------------------------
+    public void openActivityInfoData(){
+        Intent intent = new Intent(this, InfoData.class);
+        startActivity(intent);
     }
 }
