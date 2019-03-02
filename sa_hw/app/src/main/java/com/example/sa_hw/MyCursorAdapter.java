@@ -28,11 +28,11 @@ public class MyCursorAdapter extends CursorAdapter {
         TextView Page2Subtitle = view.findViewById(R.id.Page2Subtitle);
 
         int id = cursor.getInt(cursor.getColumnIndexOrThrow("_id"));
-        String title = cursor.getString(cursor.getColumnIndexOrThrow("name"));
+        String name = cursor.getString(cursor.getColumnIndexOrThrow("name"));
         String introduction = cursor.getString(cursor.getColumnIndexOrThrow("introduction"));
 
         Page2Id.setText(Integer.toString(id));
-        Page2Title.setText(title);
+        Page2Title.setText(name);
         Page2Subtitle.setText(introduction);
 
 //        final int position = cursor.getPosition();

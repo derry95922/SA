@@ -307,7 +307,7 @@ public class MainActivity extends AppCompatActivity {
         editTextId = findViewById(R.id.editTextId);
         list_view_id_data = findViewById(R.id.list_view_id_data);
         db = dbHelper.getReadableDatabase();
-        Cursor cursor = db.rawQuery("SELECT * FROM " + TABLE_NAME,null);
+        final Cursor cursor = db.rawQuery("SELECT * FROM " + TABLE_NAME,null);
         listViewCursorAdapter = new MyCursorAdapter(this,cursor);
         list_view_id_data.setAdapter(listViewCursorAdapter);
         list_view_id_data.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -318,6 +318,7 @@ public class MainActivity extends AppCompatActivity {
                 Log.d("click",cursor.getString(0));
                 Toast.makeText(MainActivity.this,"你選擇 " + " ID : " + cursor.getString(0) + " , "+ cursor.getString(1), Toast.LENGTH_LONG).show();
                 editTextId.setText(cursor.getString(0));
+                setData(cursor,position);
             }
         });
 
@@ -342,11 +343,25 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 String id = editTextId.getText().toString().trim();
+
                 if("".equals(id)){
                     Toast.makeText(MainActivity.this," 請選擇要修改的課程 ID ! ", Toast.LENGTH_LONG).show();
                 }else{
+                    String courseName = cursor.getString(cursor.getColumnIndexOrThrow("name"));
+                    String introduction = cursor.getString(cursor.getColumnIndexOrThrow("introduction"));
+                    String suitable = cursor.getString(cursor.getColumnIndexOrThrow("suitable"));
+                    String price = cursor.getString(cursor.getColumnIndexOrThrow("price"));
+                    String notice = cursor.getString(cursor.getColumnIndexOrThrow("notice"));
+                    String remark = cursor.getString(cursor.getColumnIndexOrThrow("remark"));
+
                     Intent intent = new Intent(getApplicationContext(), updateData.class);
                     intent.putExtra("message", id);
+                    intent.putExtra("courseName",courseName);
+                    intent.putExtra("introduction",introduction);
+                    intent.putExtra("suitable",suitable);
+                    intent.putExtra("price",price);
+                    intent.putExtra("notice",notice);
+                    intent.putExtra("remark",remark);
                     startActivity(intent);
                 }
             }
@@ -457,7 +472,24 @@ public class MainActivity extends AppCompatActivity {
         String[] selectionArgs = { id };
         int deletedRow = db.delete(TABLE_NAME, selection, selectionArgs);
         Log.d("deleteButton",Integer.toString(deletedRow));
-//        text_view_id.setText(id);
+    }
+
+    public void setData(Cursor cursor, int position){
+        cursor = (Cursor) list_view_id_data.getItemAtPosition(position);
+        String courseName = cursor.getString(cursor.getColumnIndexOrThrow("name"));
+        String introduction = cursor.getString(cursor.getColumnIndexOrThrow("introduction"));
+        String suitable = cursor.getString(cursor.getColumnIndexOrThrow("suitable"));
+        String price = cursor.getString(cursor.getColumnIndexOrThrow("price"));
+        String notice = cursor.getString(cursor.getColumnIndexOrThrow("notice"));
+        String remark = cursor.getString(cursor.getColumnIndexOrThrow("remark"));
+
+        Intent intent = new Intent(getApplicationContext(), updateData.class);
+        intent.putExtra("courseName",courseName);
+        intent.putExtra("introduction",introduction);
+        intent.putExtra("suitable",suitable);
+        intent.putExtra("price",price);
+        intent.putExtra("notice",notice);
+        intent.putExtra("remark",remark);
     }
 
 //    public void updateData(String id){

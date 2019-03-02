@@ -40,12 +40,15 @@ public class updateData extends AppCompatActivity {
         setContentView(R.layout.activity_update_data);
         dbHelper = new FeedReaderDbHelper(this);
 
+        setData();
+
         buttonFinishUpdate = findViewById(R.id.buttonFinishUpdate);
         buttonFinishUpdate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = getIntent();
                 String id = intent.getStringExtra("message");
+                Log.d("id from editTextId", id);
                 updateData(id);
             }
         });
@@ -57,12 +60,8 @@ public class updateData extends AppCompatActivity {
                 finish();
             }
         });
-
-        Intent intent = getIntent();
-        String id = intent.getStringExtra("message");
-        Log.d("id~!~!~!~!~!~!~!~",id);
-        Log.d("id~!~!~!~!~!~!~!~","id~!~!~!~!~!~!~!~");
     }
+
     public void updateData(String id){
         db = dbHelper.getWritableDatabase();
 
@@ -101,5 +100,30 @@ public class updateData extends AppCompatActivity {
                     selectionArgs);
             finish();
         }
+    }
+
+    public void setData(){
+        Intent intent = getIntent();
+        String courseName = intent.getStringExtra("courseName");
+        String introduction = intent.getStringExtra("introduction");
+        String suitable = intent.getStringExtra("suitable");
+        String price = intent.getStringExtra("price");
+        String notice = intent.getStringExtra("notice");
+        String remark = intent.getStringExtra("remark");
+        Log.d("Data Here!!!!",courseName + "\n" +introduction+"\n"+suitable+"\n"+price+"\n"+notice+"\n"+remark);
+
+        updateCourseName = findViewById(R.id.updateCourseName);
+        updateCourseIntro = findViewById(R.id.updateCourseIntro);
+        updateCourseSuitable = findViewById(R.id.updateCourseSuitable);
+        updateCoursePrice = findViewById(R.id.updateCoursePrice);
+        updateCourseNotice = findViewById(R.id.updateCourseNotice);
+        updateCourseRemark = findViewById(R.id.updateCourseRemark);
+
+        updateCourseName.setText(courseName);
+        updateCourseIntro.setText(introduction);
+        updateCourseSuitable.setText(suitable);
+        updateCoursePrice.setText(price);
+        updateCourseNotice.setText(notice);
+        updateCourseRemark.setText(remark);
     }
 }
