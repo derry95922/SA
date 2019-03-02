@@ -2,6 +2,7 @@ package com.example.sa_hw;
 
 import android.content.ContentValues;
 import android.content.Intent;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -10,7 +11,9 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import static android.provider.BaseColumns._ID;
 import static com.example.sa_hw.FeedReaderContract.FeedEntry.COLUMN_NAME_COURSEINTRO;
 import static com.example.sa_hw.FeedReaderContract.FeedEntry.COLUMN_NAME_COURSENAME;
 import static com.example.sa_hw.FeedReaderContract.FeedEntry.COLUMN_NAME_COURSENOTICE;
@@ -24,32 +27,43 @@ public class InfoData extends AppCompatActivity {
     private FeedReaderDbHelper dbHelper;
     private SQLiteDatabase db;
     private Button buttonFinishCreate;
+    private Button buttonDiscardCreate;
     private EditText courseName;
     private EditText courseIntro;
     private EditText courseSuitable;
     private EditText coursePrice;
     private EditText courseNotice;
     private EditText courseRemark;
-    private TextView text_view_id;
+    private EditText editTextId;
+    private TextView selectId;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_info_data);
+
         dbHelper = new FeedReaderDbHelper(this);
 
         buttonFinishCreate = findViewById(R.id.buttonFinishCreate);
         buttonFinishCreate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                createData();
+                insertData();
+            }
+        });
+
+        buttonDiscardCreate = findViewById(R.id.buttonDiscardCreate);
+        buttonDiscardCreate.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
                 finish();
             }
         });
     }
-    public void createData(){
+
+    public void insertData(){
         db = dbHelper.getWritableDatabase();
-        ContentValues values = new ContentValues();
+
         courseName = findViewById(R.id.courseName);
         courseIntro = findViewById(R.id.courseIntro);
         courseSuitable = findViewById(R.id.courseSuitable);
@@ -59,11 +73,12 @@ public class InfoData extends AppCompatActivity {
 
         String name = courseName.getText().toString().trim();
         String introduction = courseIntro.getText().toString().trim();
-        String suitable = courseIntro.getText().toString().trim();
-        String price = courseIntro.getText().toString().trim();
-        String notice = courseIntro.getText().toString().trim();
-        String remark = courseIntro.getText().toString().trim();
+        String suitable = courseSuitable.getText().toString().trim();
+        String price = coursePrice.getText().toString().trim();
+        String notice = courseNotice.getText().toString().trim();
+        String remark = courseRemark.getText().toString().trim();
 
+        ContentValues values = new ContentValues();
         values.put(COLUMN_NAME_COURSENAME, name);
         values.put(COLUMN_NAME_COURSEINTRO, introduction);
         values.put(COLUMN_NAME_COURSESUITABLE, suitable);
@@ -71,11 +86,55 @@ public class InfoData extends AppCompatActivity {
         values.put(COLUMN_NAME_COURSENOTICE, notice);
         values.put(COLUMN_NAME_COURSEREMARK, remark);
 
+        if ("".equals(name)){
+            Toast.makeText(InfoData.this," 課程名稱不可為空白 ! ", Toast.LENGTH_LONG).show();
+        }else{
+            db.insert(TABLE_NAME, null, values);
+            finish();
+        }
 
-        long newRowId = db.insert(TABLE_NAME, null, values);
-
-//        text_view_id.setText(String.valueOf(newRowId));
-        Log.d("ButtonCreate","here!!!");
+//        long newRowId = db.insert(TABLE_NAME, null, values);
+//        Log.d("ButtonCreate","here!!!");
     }
 
+    public void showData(String id){
+
+        db = dbHelper.getWritableDatabase();
+
+        courseName = findViewById(R.id.courseName);
+//        courseIntro = findViewById(R.id.courseIntro);
+//        courseSuitable = findViewById(R.id.courseSuitable);
+//        coursePrice = findViewById(R.id.coursePrice);
+//        courseNotice = findViewById(R.id.courseNotice);
+//        courseRemark = findViewById(R.id.courseRemark);
+//
+        Cursor cursor = db.rawQuery("SELECT * FROM " + TABLE_NAME, null);
+        cursor.moveToPosition(Integer.valueOf(id));
+        courseName.setText(cursor.getString(1));
+//
+//        String name = courseName.getText().toString().trim();
+//        String introduction = courseIntro.getText().toString().trim();
+//        String suitable = courseIntro.getText().toString().trim();
+//        String price = courseIntro.getText().toString().trim();
+//        String notice = courseIntro.getText().toString().trim();
+//        String remark = courseIntro.getText().toString().trim();
+//
+//        ContentValues values = new ContentValues();
+//        values.put(COLUMN_NAME_COURSENAME, name);
+//        values.put(COLUMN_NAME_COURSEINTRO, introduction);
+//        values.put(COLUMN_NAME_COURSESUITABLE, suitable);
+//        values.put(COLUMN_NAME_COURSEPRICE, price);
+//        values.put(COLUMN_NAME_COURSENOTICE, notice);
+//        values.put(COLUMN_NAME_COURSEREMARK, remark);
+//
+//        String selection = _ID + " = ?";
+//        String[] selectionArgs = { id };
+//
+//        int count = db.update(
+//                TABLE_NAME,
+//                values,
+//                selection,
+//                selectionArgs);
+//
+    }
 }
