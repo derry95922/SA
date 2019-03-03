@@ -23,30 +23,16 @@ public class MyCursorAdapter extends CursorAdapter {
 
     @Override
     public void bindView(View view, Context context, Cursor cursor) {
-        TextView Page2Id = view.findViewById(R.id.Page2Id);
-        TextView Page2Title = view.findViewById(R.id.Page2Title);
-        TextView Page2Subtitle = view.findViewById(R.id.Page2Subtitle);
+        TextView dataId = view.findViewById(R.id.dataId);
+        TextView dataName = view.findViewById(R.id.dataName);
+        TextView dataIntro = view.findViewById(R.id.dataIntro);
 
         int id = cursor.getInt(cursor.getColumnIndexOrThrow("_id"));
         String name = cursor.getString(cursor.getColumnIndexOrThrow("name"));
         String introduction = cursor.getString(cursor.getColumnIndexOrThrow("introduction"));
 
-        Page2Id.setText(Integer.toString(id));
-        Page2Title.setText(name);
-        Page2Subtitle.setText(introduction);
-
-//        final int position = cursor.getPosition();
-//        CheckBox checkBox = view.findViewById(R.id.CheckBoxId);
-//        checkBox.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                Log.d("click","click");
-//                Log.d("position",Integer.toString(position));
-//            }
-//        });
+        dataId.setText(Integer.toString(id));
+        dataName.setText(name);
+        dataIntro.setText(introduction);
     }
-
-//    public int getPosition(){
-//        return position;
-//    }
 }
