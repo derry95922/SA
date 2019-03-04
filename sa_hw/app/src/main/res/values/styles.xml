@@ -34,4 +34,8 @@
     <string name="buttonFinishUpdate">完成</string>
     <string name="buttonDiscardUpdate">捨棄</string>
 
+    <string name="dataId"></string>
+    <string name="dataName"></string>
+    <string name="dataIntro"></string>
+
 </resources>

@@ -29,9 +29,7 @@ public class MainActivity extends AppCompatActivity {
     private EditText editTextId;
     private MyCursorAdapter myAdapter;
     private MyCursorAdapter listViewCursorAdapter;
-    //------------------------------------------------------
     private Button buttonCreate;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
