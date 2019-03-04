@@ -37,5 +37,9 @@
     <string name="dataId"></string>
     <string name="dataName"></string>
     <string name="dataIntro"></string>
+    <string name="dataSuitable"></string>
+    <string name="dataPrice"></string>
+    <string name="dataNotice"></string>
+    <string name="dataRemark"></string>
 
 </resources>

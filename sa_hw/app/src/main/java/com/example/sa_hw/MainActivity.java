@@ -30,6 +30,7 @@ public class MainActivity extends AppCompatActivity {
     private MyCursorAdapter myAdapter;
     private MyCursorAdapter listViewCursorAdapter;
     private Button buttonCreate;
+    private Cursor saveCursor;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -57,19 +58,19 @@ public class MainActivity extends AppCompatActivity {
 
         editTextId = findViewById(R.id.editTextId);
         list_view_id_data = findViewById(R.id.list_view_id_data);
-        db = dbHelper.getReadableDatabase();
-        final Cursor cursor = db.rawQuery("SELECT * FROM " + TABLE_NAME,null);
-        listViewCursorAdapter = new MyCursorAdapter(this,cursor);
+        db = dbHelper.getWritableDatabase();
+        saveCursor = db.rawQuery("SELECT * FROM " + TABLE_NAME,null);
+        listViewCursorAdapter = new MyCursorAdapter(this,saveCursor);
         list_view_id_data.setAdapter(listViewCursorAdapter);
         list_view_id_data.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> list_view_id_data, View view, int position, long id) {
-                Cursor cursor = (Cursor) list_view_id_data.getItemAtPosition(position);
+                saveCursor = (Cursor) list_view_id_data.getItemAtPosition(position);
 //                Log.d("click",cursor.getString(1));
-                Log.d("click",cursor.getString(0));
-                Toast.makeText(MainActivity.this,"你選擇 " + " ID : " + cursor.getString(0) + " , "+ cursor.getString(1), Toast.LENGTH_LONG).show();
-                editTextId.setText(cursor.getString(0));
-                setData(cursor,position);
+                Log.d("click",saveCursor.getString(0));
+                Toast.makeText(MainActivity.this,"你選擇 " + " ID : " + saveCursor.getString(0) + " , "+ saveCursor.getString(1), Toast.LENGTH_LONG).show();
+                editTextId.setText(saveCursor.getString(0));
+//                setData(saveCursor,position);
             }
         });
 
@@ -98,12 +99,12 @@ public class MainActivity extends AppCompatActivity {
                 if("".equals(id)){
                     Toast.makeText(MainActivity.this," 請選擇要修改的課程 ID ! ", Toast.LENGTH_LONG).show();
                 }else{
-                    String courseName = cursor.getString(cursor.getColumnIndexOrThrow("name"));
-                    String introduction = cursor.getString(cursor.getColumnIndexOrThrow("introduction"));
-                    String suitable = cursor.getString(cursor.getColumnIndexOrThrow("suitable"));
-                    String price = cursor.getString(cursor.getColumnIndexOrThrow("price"));
-                    String notice = cursor.getString(cursor.getColumnIndexOrThrow("notice"));
-                    String remark = cursor.getString(cursor.getColumnIndexOrThrow("remark"));
+                    String courseName = saveCursor.getString(saveCursor.getColumnIndexOrThrow("name"));
+                    String introduction = saveCursor.getString(saveCursor.getColumnIndexOrThrow("introduction"));
+                    String suitable = saveCursor.getString(saveCursor.getColumnIndexOrThrow("suitable"));
+                    String price = saveCursor.getString(saveCursor.getColumnIndexOrThrow("price"));
+                    String notice = saveCursor.getString(saveCursor.getColumnIndexOrThrow("notice"));
+                    String remark = saveCursor.getString(saveCursor.getColumnIndexOrThrow("remark"));
 
                     Intent intent = new Intent(getApplicationContext(), updateData.class);
                     intent.putExtra("message", id);
@@ -113,6 +114,7 @@ public class MainActivity extends AppCompatActivity {
                     intent.putExtra("price",price);
                     intent.putExtra("notice",notice);
                     intent.putExtra("remark",remark);
+                    Log.d("我在這","id : " + id+ "name : " + courseName );
                     startActivity(intent);
                 }
             }
@@ -148,23 +150,5 @@ public class MainActivity extends AppCompatActivity {
         String[] selectionArgs = { id };
         int deletedRow = db.delete(TABLE_NAME, selection, selectionArgs);
         Log.d("deleteButton",Integer.toString(deletedRow));
-    }
-
-    public void setData(Cursor cursor, int position){
-        cursor = (Cursor) list_view_id_data.getItemAtPosition(position);
-        String courseName = cursor.getString(cursor.getColumnIndexOrThrow("name"));
-        String introduction = cursor.getString(cursor.getColumnIndexOrThrow("introduction"));
-        String suitable = cursor.getString(cursor.getColumnIndexOrThrow("suitable"));
-        String price = cursor.getString(cursor.getColumnIndexOrThrow("price"));
-        String notice = cursor.getString(cursor.getColumnIndexOrThrow("notice"));
-        String remark = cursor.getString(cursor.getColumnIndexOrThrow("remark"));
-
-        Intent intent = new Intent(getApplicationContext(), updateData.class);
-        intent.putExtra("courseName",courseName);
-        intent.putExtra("introduction",introduction);
-        intent.putExtra("suitable",suitable);
-        intent.putExtra("price",price);
-        intent.putExtra("notice",notice);
-        intent.putExtra("remark",remark);
     }
 }
