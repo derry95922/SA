@@ -95,7 +95,7 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="32dp"
         android:layout_marginRight="32dp"
-        android:layout_marginBottom="76dp"
+        android:layout_marginBottom="20dp"
         android:text="@string/buttonFinishUpdate"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
@@ -106,7 +106,7 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="128dp"
         android:layout_marginRight="128dp"
-        android:layout_marginBottom="76dp"
+        android:layout_marginBottom="20dp"
         android:text="@string/buttonDiscardUpdate"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
