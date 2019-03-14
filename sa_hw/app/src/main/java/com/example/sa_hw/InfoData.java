@@ -33,7 +33,7 @@ public class InfoData extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_info_data);
+        setContentView(R.layout.activity_create_data);
 
         dbHelper = new FeedReaderDbHelper(this);
 

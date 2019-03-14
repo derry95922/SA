@@ -18,7 +18,7 @@ public class MyCursorAdapter extends CursorAdapter {
 
     @Override
     public View newView(Context context, Cursor cursor, ViewGroup parent) {
-        return LayoutInflater.from(context).inflate(R.layout.activity_page2, parent, false);
+        return LayoutInflater.from(context).inflate(R.layout.activity_list_view, parent, false);
     }
 
     @Override
