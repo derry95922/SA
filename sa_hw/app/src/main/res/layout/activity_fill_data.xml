@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".CreateData">
+    tools:context=".FillDataActivity">
 
     <LinearLayout
         android:layout_width="341dp"
@@ -17,98 +17,97 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <EditText
-            android:id="@+id/courseName"
+            android:id="@+id/updateCourseName"
             android:layout_width="match_parent"
             android:layout_height="69dp"
             android:ems="10"
             android:inputType="textPersonName"
-            android:text="@string/courseName"
+            android:text="@string/updateCourseName"
             tools:layout_editor_absoluteX="83dp"
             tools:layout_editor_absoluteY="27dp"
-            android:hint="@string/courseName"
-            tools:ignore="Autofill"
-            />
-
-        <EditText
-            android:id="@+id/courseIntro"
-            android:layout_width="match_parent"
-            android:layout_height="69dp"
-            android:ems="10"
-            android:inputType="textPersonName"
-            android:text="@string/courseIntro"
-            tools:layout_editor_absoluteX="83dp"
-            tools:layout_editor_absoluteY="27dp"
-            android:hint="@string/courseIntro"
+            android:hint="@string/updateCourseName"
             tools:ignore="Autofill" />
 
         <EditText
-            android:id="@+id/courseSuitable"
+            android:id="@+id/updateCourseIntro"
             android:layout_width="match_parent"
             android:layout_height="69dp"
             android:ems="10"
             android:inputType="textPersonName"
-            android:text="@string/courseSuitable"
+            android:text="@string/updateCourseIntro"
             tools:layout_editor_absoluteX="83dp"
             tools:layout_editor_absoluteY="27dp"
-            android:hint="@string/courseSuitable"
+            android:hint="@string/updateCourseIntro"
             tools:ignore="Autofill" />
 
         <EditText
-            android:id="@+id/coursePrice"
+            android:id="@+id/updateCourseSuitable"
             android:layout_width="match_parent"
             android:layout_height="69dp"
             android:ems="10"
             android:inputType="textPersonName"
-            android:text="@string/coursePrice"
+            android:text="@string/updateCourseSuitable"
             tools:layout_editor_absoluteX="83dp"
             tools:layout_editor_absoluteY="27dp"
-            android:hint="@string/coursePrice"
+            android:hint="@string/updateCourseSuitable"
             tools:ignore="Autofill" />
 
         <EditText
-            android:id="@+id/courseNotice"
+            android:id="@+id/updateCoursePrice"
             android:layout_width="match_parent"
             android:layout_height="69dp"
             android:ems="10"
             android:inputType="textPersonName"
-            android:text="@string/courseNotice"
+            android:text="@string/updateCoursePrice"
             tools:layout_editor_absoluteX="83dp"
             tools:layout_editor_absoluteY="27dp"
-            android:hint="@string/courseNotice"
+            android:hint="@string/updateCoursePrice"
             tools:ignore="Autofill" />
 
         <EditText
-            android:id="@+id/courseRemark"
+            android:id="@+id/updateCourseNotice"
             android:layout_width="match_parent"
             android:layout_height="69dp"
             android:ems="10"
             android:inputType="textPersonName"
-            android:text="@string/courseRemark"
+            android:text="@string/updateCourseNotice"
             tools:layout_editor_absoluteX="83dp"
             tools:layout_editor_absoluteY="27dp"
-            android:hint="@string/courseRemark"
+            android:hint="@string/updateCourseNotice"
+            tools:ignore="Autofill" />
+
+        <EditText
+            android:id="@+id/updateCourseRemark"
+            android:layout_width="match_parent"
+            android:layout_height="69dp"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:text="@string/updateCourseRemark"
+            tools:layout_editor_absoluteX="83dp"
+            tools:layout_editor_absoluteY="27dp"
+            android:hint="@string/updateCourseRemark"
             tools:ignore="Autofill" />
     </LinearLayout>
 
     <Button
-        android:id="@+id/buttonFinishCreate"
+        android:id="@+id/buttonFinishUpdate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="32dp"
         android:layout_marginRight="32dp"
         android:layout_marginBottom="20dp"
-        android:text="@string/buttonFinishCreate"
+        android:text="@string/buttonFinishUpdate"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
     <Button
-        android:id="@+id/buttonDiscardCreate"
+        android:id="@+id/buttonDiscardUpdate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="128dp"
         android:layout_marginRight="128dp"
         android:layout_marginBottom="20dp"
-        android:text="@string/buttonDiscardCreate"
+        android:text="@string/buttonDiscardUpdate"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 

@@ -78,7 +78,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     public void onClick(View v) {
         if(v.getId()==R.id.buttonCreate){
-            Intent createData = new Intent(this, updateData.class);
+            Intent createData = new Intent(this, FillDataActivity.class);
             startActivity(createData);
         }else if(v.getId()==R.id.buttonRead){
             readData();
@@ -97,7 +97,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             if("".equals(id)){
                 Toast.makeText(MainActivity.this," 請選擇要修改的課程 ID ! ", Toast.LENGTH_LONG).show();
             }else{
-                Intent intent = new Intent(getApplicationContext(), updateData.class);
+                Intent intent = new Intent(getApplicationContext(), FillDataActivity.class);
                 setData(intent);
                 startActivity(intent);
             }
