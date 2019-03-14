@@ -118,8 +118,8 @@ public class updateData extends AppCompatActivity implements View.OnClickListene
     @Override
     public void onClick(View v) {
         if(v.getId() == R.id.buttonFinishUpdate){
-            if(intent.hasExtra("id")){
-                String id = intent.getStringExtra("id");
+            if(intent.hasExtra("_id")){
+                String id = intent.getStringExtra("_id");
                 updateData(id);
             }else{
                 createData();
