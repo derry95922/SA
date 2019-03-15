@@ -97,9 +97,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             if("".equals(id)){
                 Toast.makeText(MainActivity.this," 請選擇要修改的課程 ID ! ", Toast.LENGTH_LONG).show();
             }else{
-                Intent intent = new Intent(getApplicationContext(), FillDataActivity.class);
-                setData(intent);
-                startActivity(intent);
+                Intent updateData = new Intent(getApplicationContext(), FillDataActivity.class);
+                setData(updateData);
+                startActivity(updateData);
             }
         }
     }

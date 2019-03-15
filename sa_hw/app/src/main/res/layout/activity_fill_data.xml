@@ -17,76 +17,76 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <EditText
-            android:id="@+id/updateCourseName"
+            android:id="@+id/courseName"
             android:layout_width="match_parent"
             android:layout_height="69dp"
             android:ems="10"
+            android:hint="@string/updateCourseName"
             android:inputType="textPersonName"
             android:text="@string/updateCourseName"
+            tools:ignore="Autofill"
             tools:layout_editor_absoluteX="83dp"
-            tools:layout_editor_absoluteY="27dp"
-            android:hint="@string/updateCourseName"
-            tools:ignore="Autofill" />
+            tools:layout_editor_absoluteY="27dp" />
 
         <EditText
-            android:id="@+id/updateCourseIntro"
+            android:id="@+id/courseIntro"
             android:layout_width="match_parent"
             android:layout_height="69dp"
             android:ems="10"
+            android:hint="@string/updateCourseIntro"
             android:inputType="textPersonName"
             android:text="@string/updateCourseIntro"
+            tools:ignore="Autofill"
             tools:layout_editor_absoluteX="83dp"
-            tools:layout_editor_absoluteY="27dp"
-            android:hint="@string/updateCourseIntro"
-            tools:ignore="Autofill" />
+            tools:layout_editor_absoluteY="27dp" />
 
         <EditText
-            android:id="@+id/updateCourseSuitable"
+            android:id="@+id/courseSuitable"
             android:layout_width="match_parent"
             android:layout_height="69dp"
             android:ems="10"
+            android:hint="@string/updateCourseSuitable"
             android:inputType="textPersonName"
             android:text="@string/updateCourseSuitable"
+            tools:ignore="Autofill"
             tools:layout_editor_absoluteX="83dp"
-            tools:layout_editor_absoluteY="27dp"
-            android:hint="@string/updateCourseSuitable"
-            tools:ignore="Autofill" />
+            tools:layout_editor_absoluteY="27dp" />
 
         <EditText
-            android:id="@+id/updateCoursePrice"
+            android:id="@+id/coursePrice"
             android:layout_width="match_parent"
             android:layout_height="69dp"
             android:ems="10"
+            android:hint="@string/updateCoursePrice"
             android:inputType="textPersonName"
             android:text="@string/updateCoursePrice"
+            tools:ignore="Autofill"
             tools:layout_editor_absoluteX="83dp"
-            tools:layout_editor_absoluteY="27dp"
-            android:hint="@string/updateCoursePrice"
-            tools:ignore="Autofill" />
+            tools:layout_editor_absoluteY="27dp" />
 
         <EditText
-            android:id="@+id/updateCourseNotice"
+            android:id="@+id/courseNotice"
             android:layout_width="match_parent"
             android:layout_height="69dp"
             android:ems="10"
+            android:hint="@string/updateCourseNotice"
             android:inputType="textPersonName"
             android:text="@string/updateCourseNotice"
+            tools:ignore="Autofill"
             tools:layout_editor_absoluteX="83dp"
-            tools:layout_editor_absoluteY="27dp"
-            android:hint="@string/updateCourseNotice"
-            tools:ignore="Autofill" />
+            tools:layout_editor_absoluteY="27dp" />
 
         <EditText
-            android:id="@+id/updateCourseRemark"
+            android:id="@+id/courseRemark"
             android:layout_width="match_parent"
             android:layout_height="69dp"
             android:ems="10"
+            android:hint="@string/updateCourseRemark"
             android:inputType="textPersonName"
             android:text="@string/updateCourseRemark"
+            tools:ignore="Autofill"
             tools:layout_editor_absoluteX="83dp"
-            tools:layout_editor_absoluteY="27dp"
-            android:hint="@string/updateCourseRemark"
-            tools:ignore="Autofill" />
+            tools:layout_editor_absoluteY="27dp" />
     </LinearLayout>
 
     <Button

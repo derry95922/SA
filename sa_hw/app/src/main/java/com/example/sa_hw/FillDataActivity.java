@@ -11,6 +11,9 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.example.sa_hw.domain.Course;
+import com.example.sa_hw.usecase.CreateUseCase;
+
 import static android.provider.BaseColumns._ID;
 import static com.example.sa_hw.FeedReaderContract.FeedEntry.TABLE_NAME;
 import static com.example.sa_hw.FeedReaderContract.FeedEntry.COLUMN_NAME_COURSEINTRO;
@@ -26,13 +29,13 @@ public class FillDataActivity extends AppCompatActivity implements View.OnClickL
     private Button buttonDiscardUpdate;
     private FeedReaderDbHelper dbHelper;
     private SQLiteDatabase db;
-    private EditText updateCourseName;
-    private EditText updateCourseIntro;
-    private EditText updateCourseSuitable;
-    private EditText updateCoursePrice;
-    private EditText updateCourseNotice;
-    private EditText updateCourseRemark;
-    Intent intent;
+    private EditText courseName;
+    private EditText courseIntro;
+    private EditText courseSuitable;
+    private EditText coursePrice;
+    private EditText courseNotice;
+    private EditText courseRemark;
+    Intent updateData;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,8 +43,8 @@ public class FillDataActivity extends AppCompatActivity implements View.OnClickL
         setContentView(R.layout.activity_fill_data);
         dbHelper = new FeedReaderDbHelper(this);
 
-        intent = getIntent();
-        if(intent.hasExtra("_id"))fillListViewText(intent);
+        updateData = getIntent();
+        if(updateData.hasExtra("_id"))fillListViewText(updateData);
 
         buttonFinishUpdate = findViewById(R.id.buttonFinishUpdate);
         buttonFinishUpdate.setOnClickListener(this);
@@ -53,19 +56,19 @@ public class FillDataActivity extends AppCompatActivity implements View.OnClickL
     public void updateData(String id){
         db = dbHelper.getWritableDatabase();
 
-        updateCourseName = findViewById(R.id.updateCourseName);
-        updateCourseIntro = findViewById(R.id.updateCourseIntro);
-        updateCourseSuitable = findViewById(R.id.updateCourseSuitable);
-        updateCoursePrice = findViewById(R.id.updateCoursePrice);
-        updateCourseNotice = findViewById(R.id.updateCourseNotice);
-        updateCourseRemark = findViewById(R.id.updateCourseRemark);
+        courseName = findViewById(R.id.courseName);
+        courseIntro = findViewById(R.id.courseIntro);
+        courseSuitable = findViewById(R.id.courseSuitable);
+        coursePrice = findViewById(R.id.coursePrice);
+        courseNotice = findViewById(R.id.courseNotice);
+        courseRemark = findViewById(R.id.courseRemark);
 
-        String name = updateCourseName.getText().toString().trim();
-        String introduction = updateCourseIntro.getText().toString().trim();
-        String suitable = updateCourseSuitable.getText().toString().trim();
-        String price = updateCoursePrice.getText().toString().trim();
-        String notice = updateCourseNotice.getText().toString().trim();
-        String remark = updateCourseRemark.getText().toString().trim();
+        String name = courseName.getText().toString().trim();
+        String introduction = courseIntro.getText().toString().trim();
+        String suitable = courseSuitable.getText().toString().trim();
+        String price = coursePrice.getText().toString().trim();
+        String notice = courseNotice.getText().toString().trim();
+        String remark = courseRemark.getText().toString().trim();
 
         ContentValues values = new ContentValues();
         values.put(COLUMN_NAME_COURSENAME, name);
@@ -91,60 +94,66 @@ public class FillDataActivity extends AppCompatActivity implements View.OnClickL
         }
     }
 
-    public void fillListViewText(Intent intent){
-        String courseName = intent.getStringExtra("courseName");
-        String introduction = intent.getStringExtra("introduction");
-        String suitable = intent.getStringExtra("suitable");
-        String price = intent.getStringExtra("price");
-        String notice = intent.getStringExtra("notice");
-        String remark = intent.getStringExtra("remark");
+    public void fillListViewText(Intent updateData){
+        String name = updateData.getStringExtra("courseName");
+        String introduction = updateData.getStringExtra("introduction");
+        String suitable = updateData.getStringExtra("suitable");
+        String price = updateData.getStringExtra("price");
+        String notice = updateData.getStringExtra("notice");
+        String remark = updateData.getStringExtra("remark");
         Log.d("Data Here!!!!",courseName + "\n" +introduction+"\n"+suitable+"\n"+price+"\n"+notice+"\n"+remark);
 
-        updateCourseName = findViewById(R.id.updateCourseName);
-        updateCourseIntro = findViewById(R.id.updateCourseIntro);
-        updateCourseSuitable = findViewById(R.id.updateCourseSuitable);
-        updateCoursePrice = findViewById(R.id.updateCoursePrice);
-        updateCourseNotice = findViewById(R.id.updateCourseNotice);
-        updateCourseRemark = findViewById(R.id.updateCourseRemark);
+        courseName = findViewById(R.id.courseName);
+        courseIntro = findViewById(R.id.courseIntro);
+        courseSuitable = findViewById(R.id.courseSuitable);
+        coursePrice = findViewById(R.id.coursePrice);
+        courseNotice = findViewById(R.id.courseNotice);
+        courseRemark = findViewById(R.id.courseRemark);
 
-        updateCourseName.setText(courseName);
-        updateCourseIntro.setText(introduction);
-        updateCourseSuitable.setText(suitable);
-        updateCoursePrice.setText(price);
-        updateCourseNotice.setText(notice);
-        updateCourseRemark.setText(remark);
+        courseName.setText(name);
+        courseIntro.setText(introduction);
+        courseSuitable.setText(suitable);
+        coursePrice.setText(price);
+        courseNotice.setText(notice);
+        courseRemark.setText(remark);
     }
 
     @Override
     public void onClick(View v) {
         if(v.getId() == R.id.buttonFinishUpdate){
-            if(intent.hasExtra("_id")){
-                String id = intent.getStringExtra("_id");
+            if(updateData.hasExtra("_id")){
+                String id = updateData.getStringExtra("_id");
                 updateData(id);
             }else{
-                createData();
+                courseName = findViewById(R.id.courseName);
+                courseIntro = findViewById(R.id.courseIntro);
+                courseSuitable = findViewById(R.id.courseSuitable);
+                coursePrice = findViewById(R.id.coursePrice);
+                courseNotice = findViewById(R.id.courseNotice);
+                courseRemark = findViewById(R.id.courseRemark);
+
+                String name = courseName.getText().toString().trim();
+                String introduction = courseIntro.getText().toString().trim();
+                String suitable = courseSuitable.getText().toString().trim();
+                String price = coursePrice.getText().toString().trim();
+                String notice = courseNotice.getText().toString().trim();
+                String remark = courseRemark.getText().toString().trim();
+
+                CreateUseCase createUseCase = new CreateUseCase();
+                ContentValues resultUseCase = createUseCase.createData(name, introduction, suitable, price, notice, remark);
+
+                db = dbHelper.getWritableDatabase();
+                db.insert(TABLE_NAME, null, resultUseCase);
+                finish();
+//                createData(name, introduction, suitable, price, notice, remark);
             }
         }else {
             finish();
         }
     }
 
-    private void createData() {
+    private void createData(String name, String introduction, String suitable, String price, String notice, String remark) {
         db = dbHelper.getWritableDatabase();
-
-        updateCourseName = findViewById(R.id.updateCourseName);
-        updateCourseIntro = findViewById(R.id.updateCourseIntro);
-        updateCourseSuitable = findViewById(R.id.updateCourseSuitable);
-        updateCoursePrice = findViewById(R.id.updateCoursePrice);
-        updateCourseNotice = findViewById(R.id.updateCourseNotice);
-        updateCourseRemark = findViewById(R.id.updateCourseRemark);
-
-        String name = updateCourseName.getText().toString().trim();
-        String introduction = updateCourseIntro.getText().toString().trim();
-        String suitable = updateCourseSuitable.getText().toString().trim();
-        String price = updateCoursePrice.getText().toString().trim();
-        String notice = updateCourseNotice.getText().toString().trim();
-        String remark = updateCourseRemark.getText().toString().trim();
 
         ContentValues values = new ContentValues();
         values.put(COLUMN_NAME_COURSENAME, name);
