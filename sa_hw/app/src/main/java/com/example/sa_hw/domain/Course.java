@@ -85,7 +85,7 @@ public class Course {
         this.txRemark = txRemark;
     }
 
-    public String getCourseName() {
+    private String getCourseName() {
         return courseName;
     }
 
@@ -152,4 +152,19 @@ public class Course {
         values.put(COLUMN_NAME_COURSEREMARK, getCourseRemark());
         return values;
     }
+
+    public void setTxCourse(TextView txId, TextView txName, TextView txIntroduction, TextView txSuitable, TextView txPrice, TextView txNotice, TextView txRemark){
+        setTxId(txId);
+        setTxName(txName);
+        setTxIntroduction(txIntroduction);
+        setTxSuitable(txSuitable);
+        setTxPrice(txPrice);
+        setTxNotice(txNotice);
+        setTxRemark(txRemark);
+    }
+
+//    public TextView getTxCourse(TextView txId, TextView txName, TextView txIntroduction, TextView txSuitable, TextView txPrice, TextView txNotice, TextView txRemark){
+//        Course txCourse = (Course) view.getTag();
+//        getTxRemark();
+//    }
 }

@@ -11,6 +11,7 @@ import android.widget.CursorAdapter;
 import android.widget.TextView;
 
 import com.example.sa_hw.domain.Course;
+import com.example.sa_hw.usecase.ReadUseCase;
 
 public class MyCursorAdapter extends CursorAdapter {
 
@@ -31,27 +32,36 @@ public class MyCursorAdapter extends CursorAdapter {
     @Override
     public View newView(Context context, Cursor cursor, ViewGroup parent) {
 //        ViewHolder viewHolder = new ViewHolder();
-        Course txCourse = new Course();
+
         LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         View view = inflater.inflate(R.layout.activity_list_view,parent,false);
 
-        txCourse.setTxId((TextView)view.findViewById(R.id.dataId));
-        txCourse.setTxName((TextView)view.findViewById(R.id.dataName));
-        txCourse.setTxIntroduction((TextView)view.findViewById(R.id.dataIntro));
-        txCourse.setTxSuitable((TextView)view.findViewById(R.id.dataSuitable));
-        txCourse.setTxPrice((TextView)view.findViewById(R.id.dataPrice));
-        txCourse.setTxNotice((TextView)view.findViewById(R.id.dataNotice));
-        txCourse.setTxRemark((TextView)view.findViewById(R.id.dataRemark));
-
-        view.setTag(txCourse);
+        ReadUseCase readUseCase = new ReadUseCase(view,inflater,null);
+        View readOutput = readUseCase.ReadData();
         Log. i("cursor" ,"newView=" +view);
-        return view;
+
+        return readOutput;
+
+//        Course txCourse = new Course();
+//        txCourse.setTxId((TextView)view.findViewById(R.id.dataId));
+//        txCourse.setTxName((TextView)view.findViewById(R.id.dataName));
+//        txCourse.setTxIntroduction((TextView)view.findViewById(R.id.dataIntro));
+//        txCourse.setTxSuitable((TextView)view.findViewById(R.id.dataSuitable));
+//        txCourse.setTxPrice((TextView)view.findViewById(R.id.dataPrice));
+//        txCourse.setTxNotice((TextView)view.findViewById(R.id.dataNotice));
+//        txCourse.setTxRemark((TextView)view.findViewById(R.id.dataRemark));
+//
+//        view.setTag(txCourse);
+//        Log. i("cursor" ,"newView=" +view);
+//        return view;
+
 //        return LayoutInflater.from(context).inflate(R.layout.activity_list_view, parent, false);
     }
 
     @Override
     public void bindView(View view, Context context, Cursor cursor) {
         Log. i("cursor" ,"bindView=" +view);
+
         Course txCourse = (Course) view.getTag();
 
         int id = cursor.getInt(cursor.getColumnIndexOrThrow("_id"));
