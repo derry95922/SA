@@ -13,15 +13,10 @@ import android.widget.Toast;
 
 import com.example.sa_hw.domain.Course;
 import com.example.sa_hw.usecase.CreateUseCase;
+import com.example.sa_hw.usecase.UpdateUseCase;
 
 import static android.provider.BaseColumns._ID;
 import static com.example.sa_hw.FeedReaderContract.FeedEntry.TABLE_NAME;
-import static com.example.sa_hw.FeedReaderContract.FeedEntry.COLUMN_NAME_COURSEINTRO;
-import static com.example.sa_hw.FeedReaderContract.FeedEntry.COLUMN_NAME_COURSENAME;
-import static com.example.sa_hw.FeedReaderContract.FeedEntry.COLUMN_NAME_COURSENOTICE;
-import static com.example.sa_hw.FeedReaderContract.FeedEntry.COLUMN_NAME_COURSEPRICE;
-import static com.example.sa_hw.FeedReaderContract.FeedEntry.COLUMN_NAME_COURSEREMARK;
-import static com.example.sa_hw.FeedReaderContract.FeedEntry.COLUMN_NAME_COURSESUITABLE;
 
 public class FillDataActivity extends AppCompatActivity implements View.OnClickListener{
 
@@ -53,47 +48,6 @@ public class FillDataActivity extends AppCompatActivity implements View.OnClickL
         buttonDiscardUpdate.setOnClickListener(this);
     }
 
-    public void updateData(String id){
-        db = dbHelper.getWritableDatabase();
-
-        courseName = findViewById(R.id.courseName);
-        courseIntro = findViewById(R.id.courseIntro);
-        courseSuitable = findViewById(R.id.courseSuitable);
-        coursePrice = findViewById(R.id.coursePrice);
-        courseNotice = findViewById(R.id.courseNotice);
-        courseRemark = findViewById(R.id.courseRemark);
-
-        String name = courseName.getText().toString().trim();
-        String introduction = courseIntro.getText().toString().trim();
-        String suitable = courseSuitable.getText().toString().trim();
-        String price = coursePrice.getText().toString().trim();
-        String notice = courseNotice.getText().toString().trim();
-        String remark = courseRemark.getText().toString().trim();
-
-        ContentValues values = new ContentValues();
-        values.put(COLUMN_NAME_COURSENAME, name);
-        values.put(COLUMN_NAME_COURSEINTRO, introduction);
-        values.put(COLUMN_NAME_COURSESUITABLE, suitable);
-        values.put(COLUMN_NAME_COURSEPRICE, price);
-        values.put(COLUMN_NAME_COURSENOTICE, notice);
-        values.put(COLUMN_NAME_COURSEREMARK, remark);
-
-
-        if ("".equals(name)){
-            Toast.makeText(FillDataActivity.this," 課程名稱不可為空白 ! ", Toast.LENGTH_LONG).show();
-        }else{
-            String selection = _ID + " = ?";
-            String[] selectionArgs = { id };
-
-            db.update(
-                    TABLE_NAME,
-                    values,
-                    selection,
-                    selectionArgs);
-            finish();
-        }
-    }
-
     public void fillListViewText(Intent updateData){
         String name = updateData.getStringExtra("courseName");
         String introduction = updateData.getStringExtra("introduction");
@@ -122,8 +76,39 @@ public class FillDataActivity extends AppCompatActivity implements View.OnClickL
     public void onClick(View v) {
         if(v.getId() == R.id.buttonFinishUpdate){
             if(updateData.hasExtra("_id")){
-                String id = updateData.getStringExtra("_id");
-                updateData(id);
+                courseName = findViewById(R.id.courseName);
+                courseIntro = findViewById(R.id.courseIntro);
+                courseSuitable = findViewById(R.id.courseSuitable);
+                coursePrice = findViewById(R.id.coursePrice);
+                courseNotice = findViewById(R.id.courseNotice);
+                courseRemark = findViewById(R.id.courseRemark);
+
+                String name = courseName.getText().toString().trim();
+                String introduction = courseIntro.getText().toString().trim();
+                String suitable = courseSuitable.getText().toString().trim();
+                String price = coursePrice.getText().toString().trim();
+                String notice = courseNotice.getText().toString().trim();
+                String remark = courseRemark.getText().toString().trim();
+
+                UpdateUseCase updateUseCase = new UpdateUseCase();
+                ContentValues updateOutput = updateUseCase.UpdateData(name, introduction, suitable, price, notice, remark);
+
+                db = dbHelper.getWritableDatabase();
+                if ("".equals(name)){
+                    Toast.makeText(FillDataActivity.this," 課程名稱不可為空白 ! ", Toast.LENGTH_LONG).show();
+                }else{
+                    String id = updateData.getStringExtra("_id");
+                    String selection = _ID + " = ?";
+                    String[] selectionArgs = { id };
+
+                    db.update(
+                            TABLE_NAME,
+                            updateOutput,
+                            selection,
+                            selectionArgs);
+
+                    finish();
+                }
             }else{
                 courseName = findViewById(R.id.courseName);
                 courseIntro = findViewById(R.id.courseIntro);
@@ -140,33 +125,17 @@ public class FillDataActivity extends AppCompatActivity implements View.OnClickL
                 String remark = courseRemark.getText().toString().trim();
 
                 CreateUseCase createUseCase = new CreateUseCase();
-                ContentValues resultUseCase = createUseCase.createData(name, introduction, suitable, price, notice, remark);
+                ContentValues createOutput = createUseCase.createData(name, introduction, suitable, price, notice, remark);
 
                 db = dbHelper.getWritableDatabase();
-                db.insert(TABLE_NAME, null, resultUseCase);
-                finish();
-//                createData(name, introduction, suitable, price, notice, remark);
+                if ("".equals(name)){
+                    Toast.makeText(FillDataActivity.this," 課程名稱不可為空白 ! ", Toast.LENGTH_LONG).show();
+                }else {
+                    db.insert(TABLE_NAME, null, createOutput);
+                    finish();
+                }
             }
         }else {
-            finish();
-        }
-    }
-
-    private void createData(String name, String introduction, String suitable, String price, String notice, String remark) {
-        db = dbHelper.getWritableDatabase();
-
-        ContentValues values = new ContentValues();
-        values.put(COLUMN_NAME_COURSENAME, name);
-        values.put(COLUMN_NAME_COURSEINTRO, introduction);
-        values.put(COLUMN_NAME_COURSESUITABLE, suitable);
-        values.put(COLUMN_NAME_COURSEPRICE, price);
-        values.put(COLUMN_NAME_COURSENOTICE, notice);
-        values.put(COLUMN_NAME_COURSEREMARK, remark);
-
-        if ("".equals(name)){
-            Toast.makeText(FillDataActivity.this," 課程名稱不可為空白 ! ", Toast.LENGTH_LONG).show();
-        }else{
-            db.insert(TABLE_NAME, null, values);
             finish();
         }
     }

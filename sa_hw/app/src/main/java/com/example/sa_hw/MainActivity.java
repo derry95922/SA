@@ -26,8 +26,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private FeedReaderDbHelper dbHelper;
     private SQLiteDatabase db;
     private EditText editTextId;
-    private MyCursorAdapter myAdapter;
-    private MyCursorAdapter listViewCursorAdapter;
     private Cursor saveCursor;
 
     @Override
@@ -36,7 +34,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         setContentView(R.layout.activity_main);
 
         dbHelper = new FeedReaderDbHelper(this);
-        list_view_id_data = findViewById(R.id.list_view_id_data);
         editTextId = findViewById(R.id.editTextId);
 
         buttonCreate = findViewById(R.id.buttonCreate);
@@ -51,28 +48,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         buttonUpdate = findViewById(R.id.buttonUpdate);
         buttonUpdate.setOnClickListener(this);
 
-        db = dbHelper.getWritableDatabase();
-        saveCursor = db.rawQuery("SELECT * FROM " + TABLE_NAME,null);
-        listViewCursorAdapter = new MyCursorAdapter(this,saveCursor);
-        list_view_id_data.setAdapter(listViewCursorAdapter);
-        list_view_id_data.setOnItemClickListener(this);
-    }
-
-    public void readData(){
-        db = dbHelper.getReadableDatabase();
-        Cursor cursor = db.rawQuery("SELECT * FROM " + TABLE_NAME, null);
-        cursor.moveToFirst();
-
         list_view_id_data = findViewById(R.id.list_view_id_data);
-        myAdapter = new MyCursorAdapter(this, cursor);
-        list_view_id_data.setAdapter(myAdapter);
-    }
-
-    public void deleteData(String id){
-        String selection = _ID + " = ?";
-        String[] selectionArgs = { id };
-        int deletedRow = db.delete(TABLE_NAME, selection, selectionArgs);
-        Log.d("deleteButton",Integer.toString(deletedRow));
+        list_view_id_data.setOnItemClickListener(this);
     }
 
     @Override
@@ -83,7 +60,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }else if(v.getId()==R.id.buttonRead){
             readData();
         }else if(v.getId()==R.id.buttonDelete){
-            editTextId = findViewById(R.id.editTextId);
             String id = editTextId.getText().toString().trim();
             if("".equals(id)){
                 Toast.makeText(MainActivity.this," 請選擇要刪除的課程 ID ! ", Toast.LENGTH_LONG).show();
@@ -93,10 +69,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             readData();
         }else if(v.getId()==R.id.buttonUpdate){
             String id = editTextId.getText().toString().trim();
-
             if("".equals(id)){
                 Toast.makeText(MainActivity.this," 請選擇要修改的課程 ID ! ", Toast.LENGTH_LONG).show();
             }else{
+
                 Intent updateData = new Intent(getApplicationContext(), FillDataActivity.class);
                 setData(updateData);
                 startActivity(updateData);
@@ -104,7 +80,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }
     }
 
-    private void setData(Intent intent) {
+    @Override
+    public void onItemClick(AdapterView<?> list_view_id_data, View view, int position, long id) {
+        saveCursor = (Cursor) list_view_id_data.getItemAtPosition(position);
+        Log.d("click",saveCursor.getString(0));
+        Toast.makeText(MainActivity.this,"你選擇 " + " ID : " + saveCursor.getString(0) + " , "+ saveCursor.getString(1), Toast.LENGTH_LONG).show();
+        editTextId.setText(saveCursor.getString(0));
+    }
+
+    public void setData(Intent intent) {
         String id = saveCursor.getString(saveCursor.getColumnIndexOrThrow("_id"));
         String courseName = saveCursor.getString(saveCursor.getColumnIndexOrThrow("name"));
         String introduction = saveCursor.getString(saveCursor.getColumnIndexOrThrow("introduction"));
@@ -122,11 +106,17 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         intent.putExtra("remark",remark);
     }
 
-    @Override
-    public void onItemClick(AdapterView<?> list_view_id_data, View view, int position, long id) {
-        saveCursor = (Cursor) list_view_id_data.getItemAtPosition(position);
-        Log.d("click",saveCursor.getString(0));
-        Toast.makeText(MainActivity.this,"你選擇 " + " ID : " + saveCursor.getString(0) + " , "+ saveCursor.getString(1), Toast.LENGTH_LONG).show();
-        editTextId.setText(saveCursor.getString(0));
+    public void readData(){
+        db = dbHelper.getReadableDatabase();
+        Cursor cursor = db.rawQuery("SELECT * FROM " + TABLE_NAME, null);
+        MyCursorAdapter myCursorAdapter = new MyCursorAdapter(this, cursor);
+        list_view_id_data.setAdapter(myCursorAdapter);
+    }
+
+    public void deleteData(String id){
+        String selection = _ID + " = ?";
+        String[] selectionArgs = { id };
+        int deletedRow = db.delete(TABLE_NAME, selection, selectionArgs);
+        Log.d("deleteButton",Integer.toString(deletedRow));
     }
 }
