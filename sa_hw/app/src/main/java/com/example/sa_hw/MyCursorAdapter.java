@@ -62,23 +62,8 @@ public class MyCursorAdapter extends CursorAdapter {
     public void bindView(View view, Context context, Cursor cursor) {
         Log. i("cursor" ,"bindView=" +view);
 
-        Course txCourse = (Course) view.getTag();
-
-        int id = cursor.getInt(cursor.getColumnIndexOrThrow("_id"));
-        String name = cursor.getString(cursor.getColumnIndexOrThrow("name"));
-        String introduction = cursor.getString(cursor.getColumnIndexOrThrow("introduction"));
-        String suitable = cursor.getString(cursor.getColumnIndexOrThrow("suitable"));
-        String price = cursor.getString(cursor.getColumnIndexOrThrow("price"));
-        String notice = cursor.getString(cursor.getColumnIndexOrThrow("notice"));
-        String remark = cursor.getString(cursor.getColumnIndexOrThrow("remark"));
-
-        txCourse.getTxId().setText("ID : "+Integer.toString(id));
-        txCourse.getTxName().setText("課程名稱 : " + name);
-        txCourse.getTxIntroduction().setText("課程說明 : " + introduction);
-        txCourse.getTxSuitable().setText("適合對象 : " + suitable);
-        txCourse.getTxPrice().setText("定價 : " + price);
-        txCourse.getTxNotice().setText("注意事項 : " + notice);
-        txCourse.getTxRemark().setText("備註 : " + remark);
+        ReadUseCase readUseCase = new ReadUseCase(view,null,cursor);
+        readUseCase.resultBindView(cursor);
 
 //        TextView dataId = view.findViewById(R.id.dataId);
 //        TextView dataName = view.findViewById(R.id.dataName);
