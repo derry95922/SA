@@ -58,7 +58,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             Intent createData = new Intent(this, FillDataActivity.class);
             startActivity(createData);
         }else if(v.getId()==R.id.buttonRead){
-            readData();
+            db = dbHelper.getReadableDatabase();
+            Cursor cursor = db.rawQuery("SELECT * FROM " + TABLE_NAME, null);
+            MyCursorAdapter myCursorAdapter = new MyCursorAdapter(this, cursor);
+            list_view_id_data.setAdapter(myCursorAdapter);
         }else if(v.getId()==R.id.buttonDelete){
             String id = editTextId.getText().toString().trim();
             if("".equals(id)){
