@@ -16,74 +16,73 @@ public class Course {
     private String courseName;
     private String courseIntroduction;
     private String courseSuitable;
-    private String coursePrice;
+    private int coursePrice;
     private String courseNotice;
     private String courseRemark;
 
-//    private TextView txId;
-//    private TextView txName;
-//    private TextView txIntroduction;
-//    private TextView txSuitable;
-//    private TextView txPrice;
-//    private TextView txNotice;
-//    private TextView txRemark;
-//
-//
-//    public TextView getTxId() {
-//        return txId;
-//    }
-//
-//    public void setTxId(TextView txId) {
-//        this.txId = txId;
-//    }
-//
-//    public TextView getTxName() {
-//        return txName;
-//    }
-//
-//    public void setTxName(TextView txName) {
-//        this.txName = txName;
-//    }
-//
-//    public TextView getTxIntroduction() {
-//        return txIntroduction;
-//    }
-//
-//    public void setTxIntroduction(TextView txIntroduction) {
-//        this.txIntroduction = txIntroduction;
-//    }
-//
-//    public TextView getTxSuitable() {
-//        return txSuitable;
-//    }
-//
-//    public void setTxSuitable(TextView txSuitable) {
-//        this.txSuitable = txSuitable;
-//    }
-//
-//    public TextView getTxPrice() {
-//        return txPrice;
-//    }
-//
-//    public void setTxPrice(TextView txPrice) {
-//        this.txPrice = txPrice;
-//    }
-//
-//    public TextView getTxNotice() {
-//        return txNotice;
-//    }
-//
-//    public void setTxNotice(TextView txNotice) {
-//        this.txNotice = txNotice;
-//    }
-//
-//    public TextView getTxRemark() {
-//        return txRemark;
-//    }
-//
-//    public void setTxRemark(TextView txRemark) {
-//        this.txRemark = txRemark;
-//    }
+    private TextView txId;
+    private TextView txName;
+    private TextView txIntroduction;
+    private TextView txSuitable;
+    private TextView txPrice;
+    private TextView txNotice;
+    private TextView txRemark;
+
+    public TextView getTxId() {
+        return txId;
+    }
+
+    public void setTxId(TextView txId) {
+        this.txId = txId;
+    }
+
+    public TextView getTxName() {
+        return txName;
+    }
+
+    public void setTxName(TextView txName) {
+        this.txName = txName;
+    }
+
+    public TextView getTxIntroduction() {
+        return txIntroduction;
+    }
+
+    public void setTxIntroduction(TextView txIntroduction) {
+        this.txIntroduction = txIntroduction;
+    }
+
+    public TextView getTxSuitable() {
+        return txSuitable;
+    }
+
+    public void setTxSuitable(TextView txSuitable) {
+        this.txSuitable = txSuitable;
+    }
+
+    public TextView getTxPrice() {
+        return txPrice;
+    }
+
+    public void setTxPrice(TextView txPrice) {
+        this.txPrice = txPrice;
+    }
+
+    public TextView getTxNotice() {
+        return txNotice;
+    }
+
+    public void setTxNotice(TextView txNotice) {
+        this.txNotice = txNotice;
+    }
+
+    public TextView getTxRemark() {
+        return txRemark;
+    }
+
+    public void setTxRemark(TextView txRemark) {
+        this.txRemark = txRemark;
+    }
 
     private String getCourseName() {
         return courseName;
@@ -109,11 +108,11 @@ public class Course {
         this.courseSuitable = courseSuitable;
     }
 
-    private String getCoursePrice() {
+    private int getCoursePrice() {
         return coursePrice;
     }
 
-    private void setCoursePrice(String coursePrice) {
+    private void setCoursePrice(int coursePrice) {
         this.coursePrice = coursePrice;
     }
 
@@ -133,7 +132,7 @@ public class Course {
         this.courseRemark = courseRemark;
     }
 
-    public void setCourse(String name, String introduction, String suitable, String price, String notice, String remark){
+    public void setCourse(String name, String introduction, String suitable, int price, String notice, String remark){
         setCourseName(name);
         setCourseIntroduction(introduction);
         setCourseSuitable(suitable);
@@ -153,15 +152,15 @@ public class Course {
         return values;
     }
 
-//    public void setTxCourse(TextView txId, TextView txName, TextView txIntroduction, TextView txSuitable, TextView txPrice, TextView txNotice, TextView txRemark){
-//        setTxId(txId);
-//        setTxName(txName);
-//        setTxIntroduction(txIntroduction);
-//        setTxSuitable(txSuitable);
-//        setTxPrice(txPrice);
-//        setTxNotice(txNotice);
-//        setTxRemark(txRemark);
-//    }
+    public void setTxCourse(TextView txId, TextView txName, TextView txIntroduction, TextView txSuitable, TextView txPrice, TextView txNotice, TextView txRemark){
+        setTxId(txId);
+        setTxName(txName);
+        setTxIntroduction(txIntroduction);
+        setTxSuitable(txSuitable);
+        setTxPrice(txPrice);
+        setTxNotice(txNotice);
+        setTxRemark(txRemark);
+    }
 
 //    public TextView getTxCourse(TextView txId, TextView txName, TextView txIntroduction, TextView txSuitable, TextView txPrice, TextView txNotice, TextView txRemark){
 //        Course txCourse = (Course) view.getTag();

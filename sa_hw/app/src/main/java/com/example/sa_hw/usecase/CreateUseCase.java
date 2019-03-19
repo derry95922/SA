@@ -4,26 +4,17 @@ import android.content.ContentValues;
 
 import com.example.sa_hw.domain.Course;
 
-public class CreateUseCase {
+public class CreateUseCase implements UseCase{
     public CreateUseCase(){}
 
-    public ContentValues createData(String name, String introduction, String suitable, String price, String notice, String remark){
-
-        Course course = new Course();
+    Course course;
+    public void input(String name, String introduction, String suitable, int price, String notice, String remark){
+        course = new Course();
         course.setCourse(name, introduction, suitable, price, notice, remark);
-        return course.getCourse();
-
     }
 
-
-
-
-
-
-
-
-
-
-
-
+    @Override
+    public ContentValues output() {
+        return course.getCourse();
+    }
 }

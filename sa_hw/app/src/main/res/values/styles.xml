@@ -28,7 +28,7 @@
     <string name="updateCourseName">課程名稱</string>
     <string name="updateCourseIntro">課程說明</string>
     <string name="updateCourseSuitable">適合對象</string>
-    <string name="updateCoursePrice">定價</string>
+    <string name="updateCoursePrice">0</string>
     <string name="updateCourseNotice">注意事項</string>
     <string name="updateCourseRemark">備註</string>
     <string name="buttonFinishUpdate">完成</string>

@@ -86,12 +86,13 @@ public class FillDataActivity extends AppCompatActivity implements View.OnClickL
                 String name = courseName.getText().toString().trim();
                 String introduction = courseIntro.getText().toString().trim();
                 String suitable = courseSuitable.getText().toString().trim();
-                String price = coursePrice.getText().toString().trim();
+                int price = Integer.parseInt(coursePrice.getText().toString().trim());
                 String notice = courseNotice.getText().toString().trim();
                 String remark = courseRemark.getText().toString().trim();
 
                 UpdateUseCase updateUseCase = new UpdateUseCase();
-                ContentValues updateOutput = updateUseCase.UpdateData(name, introduction, suitable, price, notice, remark);
+                updateUseCase.input(name, introduction, suitable, price, notice, remark);
+                ContentValues updateOutput = updateUseCase.output();
 
                 db = dbHelper.getWritableDatabase();
                 if ("".equals(name)){
@@ -120,14 +121,15 @@ public class FillDataActivity extends AppCompatActivity implements View.OnClickL
                 String name = courseName.getText().toString().trim();
                 String introduction = courseIntro.getText().toString().trim();
                 String suitable = courseSuitable.getText().toString().trim();
-                String price = coursePrice.getText().toString().trim();
+                int price = Integer.parseInt(coursePrice.getText().toString().trim());
                 String notice = courseNotice.getText().toString().trim();
                 String remark = courseRemark.getText().toString().trim();
 
                 CreateUseCase createUseCase = new CreateUseCase();
-                ContentValues createOutput = createUseCase.createData(name, introduction, suitable, price, notice, remark);
+                createUseCase.input(name, introduction, suitable, price, notice, remark);
+                ContentValues createOutput = createUseCase.output();
 
-                db = dbHelper.getWritableDatabase();
+                        db = dbHelper.getWritableDatabase();
                 if ("".equals(name)){
                     Toast.makeText(FillDataActivity.this," 課程名稱不可為空白 ! ", Toast.LENGTH_LONG).show();
                 }else {

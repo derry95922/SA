@@ -75,7 +75,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             if("".equals(id)){
                 Toast.makeText(MainActivity.this," 請選擇要修改的課程 ID ! ", Toast.LENGTH_LONG).show();
             }else{
-
                 Intent updateData = new Intent(getApplicationContext(), FillDataActivity.class);
                 setData(updateData);
                 startActivity(updateData);
@@ -119,6 +118,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public void deleteData(String id){
         String selection = _ID + " = ?";
         String[] selectionArgs = { id };
+
+//        DeleteUseCase deleteUseCase = DeleteUseCase();
+//        String selection = deleteUseCase.
+
         int deletedRow = db.delete(TABLE_NAME, selection, selectionArgs);
         Log.d("deleteButton",Integer.toString(deletedRow));
     }

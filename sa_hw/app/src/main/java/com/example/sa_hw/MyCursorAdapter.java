@@ -19,14 +19,14 @@ public class MyCursorAdapter extends CursorAdapter {
         super(context, cursor, 0);
     }
 
-    static class ViewHolder{
-        public TextView tx_id;
-        public TextView tx_name;
-        public TextView tx_intorduction;
-        public TextView tx_suitable;
-        public TextView tx_price;
-        public TextView tx_notice;
-        public TextView tx_remark;
+    private static class ViewHolder{
+        private TextView tx_id;
+        private TextView tx_name;
+        private TextView tx_intorduction;
+        private TextView tx_suitable;
+        private TextView tx_price;
+        private TextView tx_notice;
+        private TextView tx_remark;
     }
 
     @Override
@@ -34,7 +34,15 @@ public class MyCursorAdapter extends CursorAdapter {
 
         LayoutInflater inflater = LayoutInflater.from(context);
         View view = inflater.inflate(R.layout.activity_list_view,parent,false);
+//**usecase
+        ReadUseCase readUseCase = new ReadUseCase(view,inflater,null);
+        View readOutput = readUseCase.ReadData();
+        Log. i("cursor" ,"newView=" +view);
 
+        return readOutput;
+
+//可以用viewholder跑的
+        /*
         ViewHolder viewHolder = new ViewHolder();
         viewHolder.tx_id = view.findViewById(R.id.dataId);
         viewHolder.tx_name = view.findViewById(R.id.dataName);
@@ -46,15 +54,8 @@ public class MyCursorAdapter extends CursorAdapter {
 
         view.setTag(viewHolder);
         return view;
-/*
-**usecase
-//        ReadUseCase readUseCase = new ReadUseCase(view,inflater,null);
-//        View readOutput = readUseCase.ReadData();
-//        Log. i("cursor" ,"newView=" +view);
-//
-//        return readOutput;
+*/
 
- */
 /*
 **without usecase
 //        Course txCourse = new Course();
@@ -78,9 +79,10 @@ public class MyCursorAdapter extends CursorAdapter {
     public void bindView(View view, Context context, Cursor cursor) {
         Log. i("cursor" ,"bindView=" +view);
 
-//        ReadUseCase readUseCase = new ReadUseCase(view,null,cursor);
-//        readUseCase.resultBindView(cursor);
-
+        ReadUseCase readUseCase = new ReadUseCase(view,null,cursor);
+        readUseCase.resultBindView(cursor);
+//可以用viewholder跑的
+/*
         ViewHolder viewHolder = (ViewHolder) view.getTag();
         int id = cursor.getInt(cursor.getColumnIndexOrThrow("_id"));
         String name = cursor.getString(cursor.getColumnIndexOrThrow("name"));
@@ -97,7 +99,7 @@ public class MyCursorAdapter extends CursorAdapter {
         viewHolder.tx_price.setText("定價 : " + price);
         viewHolder.tx_notice.setText("注意事項 : " + notice);
         viewHolder.tx_remark.setText("備註 : " + remark);
-
+*/
 /*
 original
   TextView dataId = view.findViewById(R.id.dataId);
