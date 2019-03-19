@@ -2,6 +2,8 @@ package com.example.sa_hw.usecase;
 
 import android.content.ContentValues;
 
+import com.example.sa_hw.DAO.DAO;
+import com.example.sa_hw.DAO.SQLiteAccess;
 import com.example.sa_hw.domain.Course;
 
 public class CreateUseCase implements UseCase{
@@ -13,8 +15,9 @@ public class CreateUseCase implements UseCase{
         course.setCourse(name, introduction, suitable, price, notice, remark);
     }
 
-    @Override
-    public ContentValues output() {
-        return course.getCourse();
+    public ContentValues createData(){
+        DAO dao = new SQLiteAccess();
+        ContentValues result = dao.create(course);
+        return result;
     }
 }

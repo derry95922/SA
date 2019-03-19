@@ -3,6 +3,9 @@ package com.example.sa_hw.domain;
 import android.content.ContentValues;
 import android.widget.TextView;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import static com.example.sa_hw.FeedReaderContract.FeedEntry.COLUMN_NAME_COURSEINTRO;
 import static com.example.sa_hw.FeedReaderContract.FeedEntry.COLUMN_NAME_COURSENAME;
 import static com.example.sa_hw.FeedReaderContract.FeedEntry.COLUMN_NAME_COURSENOTICE;
@@ -84,7 +87,7 @@ public class Course {
         this.txRemark = txRemark;
     }
 
-    private String getCourseName() {
+    public String getCourseName() {
         return courseName;
     }
 
@@ -92,7 +95,7 @@ public class Course {
         this.courseName = courseName;
     }
 
-    private String getCourseIntroduction() {
+    public String getCourseIntroduction() {
         return courseIntroduction;
     }
 
@@ -100,7 +103,7 @@ public class Course {
         this.courseIntroduction = courseIntroduction;
     }
 
-    private String getCourseSuitable() {
+    public String getCourseSuitable() {
         return courseSuitable;
     }
 
@@ -108,7 +111,7 @@ public class Course {
         this.courseSuitable = courseSuitable;
     }
 
-    private int getCoursePrice() {
+    public int getCoursePrice() {
         return coursePrice;
     }
 
@@ -116,7 +119,7 @@ public class Course {
         this.coursePrice = coursePrice;
     }
 
-    private String getCourseNotice() {
+    public String getCourseNotice() {
         return courseNotice;
     }
 
@@ -124,7 +127,7 @@ public class Course {
         this.courseNotice = courseNotice;
     }
 
-    private String getCourseRemark() {
+    public String getCourseRemark() {
         return courseRemark;
     }
 
@@ -139,17 +142,6 @@ public class Course {
         setCoursePrice(price);
         setCourseNotice(notice);
         setCourseRemark(remark);
-    }
-
-    public ContentValues getCourse(){
-        ContentValues values = new ContentValues();
-        values.put(COLUMN_NAME_COURSENAME, getCourseName());
-        values.put(COLUMN_NAME_COURSEINTRO, getCourseIntroduction());
-        values.put(COLUMN_NAME_COURSESUITABLE, getCourseSuitable());
-        values.put(COLUMN_NAME_COURSEPRICE, getCoursePrice());
-        values.put(COLUMN_NAME_COURSENOTICE, getCourseNotice());
-        values.put(COLUMN_NAME_COURSEREMARK, getCourseRemark());
-        return values;
     }
 
     public void setTxCourse(TextView txId, TextView txName, TextView txIntroduction, TextView txSuitable, TextView txPrice, TextView txNotice, TextView txRemark){

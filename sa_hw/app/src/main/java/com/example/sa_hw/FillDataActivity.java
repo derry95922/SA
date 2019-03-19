@@ -11,6 +11,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.example.sa_hw.DAO.DAO;
 import com.example.sa_hw.domain.Course;
 import com.example.sa_hw.usecase.CreateUseCase;
 import com.example.sa_hw.usecase.UpdateUseCase;
@@ -92,7 +93,7 @@ public class FillDataActivity extends AppCompatActivity implements View.OnClickL
 
                 UpdateUseCase updateUseCase = new UpdateUseCase();
                 updateUseCase.input(name, introduction, suitable, price, notice, remark);
-                ContentValues updateOutput = updateUseCase.output();
+                ContentValues updateOutput = updateUseCase.updateData();
 
                 db = dbHelper.getWritableDatabase();
                 if ("".equals(name)){
@@ -127,9 +128,9 @@ public class FillDataActivity extends AppCompatActivity implements View.OnClickL
 
                 CreateUseCase createUseCase = new CreateUseCase();
                 createUseCase.input(name, introduction, suitable, price, notice, remark);
-                ContentValues createOutput = createUseCase.output();
+                ContentValues createOutput = createUseCase.createData();
 
-                        db = dbHelper.getWritableDatabase();
+                db = dbHelper.getWritableDatabase();
                 if ("".equals(name)){
                     Toast.makeText(FillDataActivity.this," 課程名稱不可為空白 ! ", Toast.LENGTH_LONG).show();
                 }else {
