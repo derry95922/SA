@@ -144,6 +144,15 @@ public class Course {
         setCourseRemark(remark);
     }
 
+    public Course(String name, String introduction, String suitable, int price, String notice, String remark){
+        setCourseName(name);
+        setCourseIntroduction(introduction);
+        setCourseSuitable(suitable);
+        setCoursePrice(price);
+        setCourseNotice(notice);
+        setCourseRemark(remark);
+    }
+
     public void setTxCourse(TextView txId, TextView txName, TextView txIntroduction, TextView txSuitable, TextView txPrice, TextView txNotice, TextView txRemark){
         setTxId(txId);
         setTxName(txName);

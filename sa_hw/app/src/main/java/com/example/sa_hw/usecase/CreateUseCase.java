@@ -11,8 +11,8 @@ public class CreateUseCase implements UseCase{
 
     Course course;
     public void input(String name, String introduction, String suitable, int price, String notice, String remark){
-        course = new Course();
-        course.setCourse(name, introduction, suitable, price, notice, remark);
+        course = new Course(name, introduction, suitable, price, notice, remark);
+//        course.setCourse(name, introduction, suitable, price, notice, remark);
     }
 
     public ContentValues createData(){
