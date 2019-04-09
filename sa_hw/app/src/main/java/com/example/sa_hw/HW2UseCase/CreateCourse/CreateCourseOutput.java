@@ -1,15 +1,7 @@
 package com.example.sa_hw.HW2UseCase.CreateCourse;
 
-public class CreateCourseOutput {
+public interface CreateCourseOutput {
+    public String getCourseName();
 
-    private String courseName;
-
-
-    public String getCourseName() {
-        return courseName;
-    }
-
-    public void setCourseName(String courseName) {
-        this.courseName = courseName;
-    }
+    public void setCourseName(String courseName);
 }

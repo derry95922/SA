@@ -1,67 +1,26 @@
 package com.example.sa_hw.HW2UseCase.CreateCourse;
 
-public class CreateCourseInput {
-    private String courseName;
-    private String courseIntroduction;
-    private String courseSuitable;
-    private int coursePrice;
-    private String courseNotice;
-    private String courseRemark;
+public interface CreateCourseInput {
+    String getCourseName();
+    void setCourseName(String courseName);
 
-    public CreateCourseInput(String name, String introduction, String suitable, int price, String notice, String remark){
-        setCourseName(name);
-        setCourseIntroduction(introduction);
-        setCourseSuitable(suitable);
-        setCoursePrice(price);
-        setCourseNotice(notice);
-        setCourseRemark(remark);
-    }
+    String getCourseIntroduction();
 
-    public String getCourseName() {
-        return courseName;
-    }
+    void setCourseIntroduction(String courseIntroduction);
 
-    public void setCourseName(String courseName) {
-        this.courseName = courseName;
-    }
+    String getCourseSuitable();
 
-    public String getCourseIntroduction() {
-        return courseIntroduction;
-    }
+    void setCourseSuitable(String courseSuitable);
 
-    public void setCourseIntroduction(String courseIntroduction) {
-        this.courseIntroduction = courseIntroduction;
-    }
+    int getCoursePrice();
 
-    public String getCourseSuitable() {
-        return courseSuitable;
-    }
+    void setCoursePrice(int coursePrice);
 
-    public void setCourseSuitable(String courseSuitable) {
-        this.courseSuitable = courseSuitable;
-    }
+    String getCourseNotice();
 
-    public int getCoursePrice() {
-        return coursePrice;
-    }
+    void setCourseNotice(String courseNotice);
 
-    public void setCoursePrice(int coursePrice) {
-        this.coursePrice = coursePrice;
-    }
+    String getCourseRemark();
 
-    public String getCourseNotice() {
-        return courseNotice;
-    }
-
-    public void setCourseNotice(String courseNotice) {
-        this.courseNotice = courseNotice;
-    }
-
-    public String getCourseRemark() {
-        return courseRemark;
-    }
-
-    public void setCourseRemark(String courseRemark) {
-        this.courseRemark = courseRemark;
-    }
+    void setCourseRemark(String courseRemark);
 }

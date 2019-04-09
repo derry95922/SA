@@ -16,7 +16,8 @@ import com.example.sa_hw.HW2UseCase.CourseRepository;
 import com.example.sa_hw.HW2UseCase.CreateCourse.CreateCourse;
 import com.example.sa_hw.HW2UseCase.CreateCourse.CreateCourseImpl;
 import com.example.sa_hw.HW2UseCase.CreateCourse.CreateCourseInput;
-import com.example.sa_hw.HW2UseCase.CreateCourse.CreateCourseOutput;
+import com.example.sa_hw.HW2UseCase.CreateCourse.CreateCourseInputImpl;
+import com.example.sa_hw.HW2UseCase.CreateCourse.CreateCourseOutputImpl;
 import com.example.sa_hw.usecase.UpdateUseCase;
 
 import static android.provider.BaseColumns._ID;
@@ -157,8 +158,8 @@ public class FillDataActivity extends AppCompatActivity implements View.OnClickL
                 CourseRepository repository = new CourseRepositoryImpl(this);
                 CreateCourse createCourseUC = new CreateCourseImpl(repository);
 
-                CreateCourseInput input = new CreateCourseInput(name,introduction,suitable,price,notice,remark);
-                CreateCourseOutput output = new CreateCourseOutput();
+                CreateCourseInput input = new CreateCourseInputImpl(name,introduction,suitable,price,notice,remark);
+                CreateCourseOutputImpl output = new CreateCourseOutputImpl();
 
                 createCourseUC.execute(input,output);
 

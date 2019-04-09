@@ -2,7 +2,6 @@ package com.example.sa_hw.HW2UseCase.CreateCourse;
 
 import com.example.sa_hw.HW2Domain.HW2Course;
 import com.example.sa_hw.HW2UseCase.CourseRepository;
-import com.example.sa_hw.domain.Course;
 
 public class CreateCourseImpl implements CreateCourse{
 

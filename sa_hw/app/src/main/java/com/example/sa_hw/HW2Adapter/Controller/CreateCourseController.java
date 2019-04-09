@@ -6,7 +6,7 @@ import com.example.sa_hw.HW2UseCase.CourseRepositoryImpl;
 import com.example.sa_hw.HW2UseCase.CourseRepository;
 import com.example.sa_hw.HW2UseCase.CreateCourse.CreateCourse;
 import com.example.sa_hw.HW2UseCase.CreateCourse.CreateCourseImpl;
-import com.example.sa_hw.HW2UseCase.CreateCourse.CreateCourseInput;
+import com.example.sa_hw.HW2UseCase.CreateCourse.CreateCourseInputImpl;
 
 public class CreateCourseController {
     private Context context;
@@ -17,7 +17,7 @@ public class CreateCourseController {
 
     CourseRepository courseRepository = new CourseRepositoryImpl(context);
     public CreateCourse createCourse = new CreateCourseImpl(courseRepository);
-//    public CreateCourseOutput createCoursePresenter = new CreateCoursePresenter();
+//    public CreateCourseOutputImpl createCoursePresenter = new CreateCoursePresenter();
 
 
     public CreateCourseController(String name, String introduction, String suitable, int price, String notice, String remark){
@@ -25,7 +25,7 @@ public class CreateCourseController {
     }
 
     public void createCourseExecute(String name, String introduction, String suitable, int price, String notice, String remark){
-        CreateCourseInput input = (CreateCourseInput) createCourse;
+        CreateCourseInputImpl input = (CreateCourseInputImpl) createCourse;
         input.setCourseName(name);
         input.setCourseIntroduction(introduction);
         input.setCourseSuitable(suitable);
@@ -33,7 +33,7 @@ public class CreateCourseController {
         input.setCourseNotice(notice);
         input.setCourseRemark(remark);
 
-//        CreateCourseOutput output = createCoursePresenter;
+//        CreateCourseOutputImpl output = createCoursePresenter;
 
 //        createCourse.execute(input,output);
     }

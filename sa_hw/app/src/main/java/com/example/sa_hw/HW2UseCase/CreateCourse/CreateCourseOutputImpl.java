@@ -1,8 +1,6 @@
-package com.example.sa_hw.HW2Adapter.Presenter;
+package com.example.sa_hw.HW2UseCase.CreateCourse;
 
-public class CreateCoursePresenter {
-
-    public CreateCoursePresenter(){}
+public class CreateCourseOutputImpl implements CreateCourseOutput {
 
     private String courseName;
 
