@@ -1,21 +1,8 @@
 package com.example.sa_hw.domain;
 
-import android.content.ContentValues;
 import android.widget.TextView;
 
-import java.util.ArrayList;
-import java.util.List;
-
-import static com.example.sa_hw.FeedReaderContract.FeedEntry.COLUMN_NAME_COURSEINTRO;
-import static com.example.sa_hw.FeedReaderContract.FeedEntry.COLUMN_NAME_COURSENAME;
-import static com.example.sa_hw.FeedReaderContract.FeedEntry.COLUMN_NAME_COURSENOTICE;
-import static com.example.sa_hw.FeedReaderContract.FeedEntry.COLUMN_NAME_COURSEPRICE;
-import static com.example.sa_hw.FeedReaderContract.FeedEntry.COLUMN_NAME_COURSEREMARK;
-import static com.example.sa_hw.FeedReaderContract.FeedEntry.COLUMN_NAME_COURSESUITABLE;
-
 public class Course {
-    public Course(){}
-
     private String courseName;
     private String courseIntroduction;
     private String courseSuitable;
@@ -30,6 +17,8 @@ public class Course {
     private TextView txPrice;
     private TextView txNotice;
     private TextView txRemark;
+
+    public Course(){}
 
     public TextView getTxId() {
         return txId;
