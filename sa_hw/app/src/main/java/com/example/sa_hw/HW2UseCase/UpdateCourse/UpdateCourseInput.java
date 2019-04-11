@@ -1,6 +1,10 @@
-package com.example.sa_hw.HW2UseCase.CreateCourse;
+package com.example.sa_hw.HW2UseCase.UpdateCourse;
 
-public interface CreateCourseInput {
+public interface UpdateCourseInput {
+    String getOldCourseName();
+
+    void setOldCourseName(String courseName);
+
     String getCourseName();
 
     void setCourseName(String courseName);

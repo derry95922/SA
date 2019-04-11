@@ -17,10 +17,18 @@ import com.example.sa_hw.HW2UseCase.CreateCourse.CreateCourse;
 import com.example.sa_hw.HW2UseCase.CreateCourse.CreateCourseImpl;
 import com.example.sa_hw.HW2UseCase.CreateCourse.CreateCourseInput;
 import com.example.sa_hw.HW2UseCase.CreateCourse.CreateCourseInputImpl;
+import com.example.sa_hw.HW2UseCase.CreateCourse.CreateCourseOutput;
 import com.example.sa_hw.HW2UseCase.CreateCourse.CreateCourseOutputImpl;
+import com.example.sa_hw.HW2UseCase.UpdateCourse.UpdateCourse;
+import com.example.sa_hw.HW2UseCase.UpdateCourse.UpdateCourseImpl;
+import com.example.sa_hw.HW2UseCase.UpdateCourse.UpdateCourseInput;
+import com.example.sa_hw.HW2UseCase.UpdateCourse.UpdateCourseInputImpl;
+import com.example.sa_hw.HW2UseCase.UpdateCourse.UpdateCourseOutput;
+import com.example.sa_hw.HW2UseCase.UpdateCourse.UpdateCourseOutputImpl;
 import com.example.sa_hw.usecase.UpdateUseCase;
 
 import static android.provider.BaseColumns._ID;
+import static com.example.sa_hw.FeedReaderContract.FeedEntry.COLUMN_NAME_COURSENAME;
 import static com.example.sa_hw.FeedReaderContract.FeedEntry.TABLE_NAME;
 
 public class FillDataActivity extends AppCompatActivity implements View.OnClickListener{
@@ -95,52 +103,43 @@ public class FillDataActivity extends AppCompatActivity implements View.OnClickL
                 String notice = courseNotice.getText().toString().trim();
                 String remark = courseRemark.getText().toString().trim();
 
-                UpdateUseCase updateUseCase = new UpdateUseCase();
-                updateUseCase.input(name, introduction, suitable, price, notice, remark);
-                ContentValues updateOutput = updateUseCase.updateData();
+                CourseRepository courseRepository = new CourseRepositoryImpl(this);
+                UpdateCourse updateCourse = new UpdateCourseImpl(courseRepository);
 
-                db = dbHelper.getWritableDatabase();
+                UpdateCourseInput input = new UpdateCourseInputImpl(name,introduction,suitable,price,notice,remark);
+                UpdateCourseOutput output = new UpdateCourseOutputImpl();
+
                 if ("".equals(name)){
                     Toast.makeText(FillDataActivity.this," 課程名稱不可為空白 ! ", Toast.LENGTH_LONG).show();
-                }else{
-                    String id = updateData.getStringExtra("_id");
-                    String selection = _ID + " = ?";
-                    String[] selectionArgs = { id };
-
-                    db.update(
-                            TABLE_NAME,
-                            updateOutput,
-                            selection,
-                            selectionArgs);
-
+                }else {
+                    updateCourse.execute(input,output);
                     finish();
                 }
-            }else{
-//                courseName = findViewById(R.id.courseName);
-//                courseIntro = findViewById(R.id.courseIntro);
-//                courseSuitable = findViewById(R.id.courseSuitable);
-//                coursePrice = findViewById(R.id.coursePrice);
-//                courseNotice = findViewById(R.id.courseNotice);
-//                courseRemark = findViewById(R.id.courseRemark);
-//
-//                String name = courseName.getText().toString().trim();
-//                String introduction = courseIntro.getText().toString().trim();
-//                String suitable = courseSuitable.getText().toString().trim();
-//                int price = Integer.parseInt(coursePrice.getText().toString().trim());
-//                String notice = courseNotice.getText().toString().trim();
-//                String remark = courseRemark.getText().toString().trim();
-//
-//                CreateUseCase createUseCase = new CreateUseCase();
-//                createUseCase.input(name, introduction, suitable, price, notice, remark);
-//                ContentValues createOutput = createUseCase.createData();
+
+
+//                UpdateUseCase updateUseCase = new UpdateUseCase();
+//                updateUseCase.input(name, introduction, suitable, price, notice, remark);
+//                ContentValues updateOutput = updateUseCase.updateData();
 //
 //                db = dbHelper.getWritableDatabase();
 //                if ("".equals(name)){
 //                    Toast.makeText(FillDataActivity.this," 課程名稱不可為空白 ! ", Toast.LENGTH_LONG).show();
-//                }else {
-//                    db.insert(TABLE_NAME, null, createOutput);
+//                }else{
+////                    String id = updateData.getStringExtra("_id");
+////                    String selection = _ID + " = ?";
+//                    String updateCourse = updateData.getStringExtra("courseName");
+//                    String selection = COLUMN_NAME_COURSENAME + " = ?";
+//                    String[] selectionArgs = { updateCourse };
+//
+//                    db.update(
+//                            TABLE_NAME,
+//                            updateOutput,
+//                            selection,
+//                            selectionArgs);
+//
 //                    finish();
 //                }
+            }else{
                 courseName = findViewById(R.id.courseName);
                 courseIntro = findViewById(R.id.courseIntro);
                 courseSuitable = findViewById(R.id.courseSuitable);
@@ -159,11 +158,14 @@ public class FillDataActivity extends AppCompatActivity implements View.OnClickL
                 CreateCourse createCourseUC = new CreateCourseImpl(repository);
 
                 CreateCourseInput input = new CreateCourseInputImpl(name,introduction,suitable,price,notice,remark);
-                CreateCourseOutputImpl output = new CreateCourseOutputImpl();
+                CreateCourseOutput output = new CreateCourseOutputImpl();
 
-                createCourseUC.execute(input,output);
-
-                finish();
+                if ("".equals(name)){
+                    Toast.makeText(FillDataActivity.this," 課程名稱不可為空白 ! ", Toast.LENGTH_LONG).show();
+                }else {
+                    createCourseUC.execute(input,output);
+                    finish();
+                }
             }
         }else {
             finish();
