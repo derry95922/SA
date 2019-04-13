@@ -1,9 +1,9 @@
 package com.example.sa_hw.HW2UseCase.UpdateCourse;
 
 public interface UpdateCourseInput {
-    String getOldCourseName();
+    String getCourseID();
 
-    void setOldCourseName(String courseName);
+    void setCourseID(String courseID);
 
     String getCourseName();
 

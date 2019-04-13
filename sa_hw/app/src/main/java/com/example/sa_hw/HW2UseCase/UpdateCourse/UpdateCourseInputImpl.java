@@ -2,7 +2,7 @@ package com.example.sa_hw.HW2UseCase.UpdateCourse;
 
 public class UpdateCourseInputImpl implements UpdateCourseInput{
 
-    private String oldCourseName;
+    private String courseID;
     private String courseName;
     private String courseIntroduction;
     private String courseSuitable;
@@ -10,7 +10,8 @@ public class UpdateCourseInputImpl implements UpdateCourseInput{
     private String courseNotice;
     private String courseRemark;
 
-    public UpdateCourseInputImpl(String name, String introduction, String suitable, int price, String notice, String remark){
+    public UpdateCourseInputImpl(String id, String name, String introduction, String suitable, int price, String notice, String remark){
+        setCourseID(id);
         setCourseName(name);
         setCourseIntroduction(introduction);
         setCourseSuitable(suitable);
@@ -19,12 +20,12 @@ public class UpdateCourseInputImpl implements UpdateCourseInput{
         setCourseRemark(remark);
     }
 
-    public String getOldCourseName() {
-        return oldCourseName;
+    public String getCourseID() {
+        return courseID;
     }
 
-    public void setOldCourseName(String oldCourseName) {
-        this.oldCourseName = oldCourseName;
+    public void setCourseID(String courseID) {
+        this.courseID = courseID;
     }
 
     public String getCourseName() {

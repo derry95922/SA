@@ -11,7 +11,7 @@ import com.example.sa_hw.HW2Adapter.Controller.CourseDTO;
 import com.example.sa_hw.HW2Domain.HW2Course;
 import com.example.sa_hw.HW2UseCase.CourseRepository;
 
-import static com.example.sa_hw.FeedReaderContract.FeedEntry.COLUMN_NAME_COURSENAME;
+import static android.provider.BaseColumns._ID;
 import static com.example.sa_hw.FeedReaderContract.FeedEntry.TABLE_NAME;
 
 public class CourseRepositoryImpl implements CourseRepository {
@@ -47,7 +47,7 @@ public class CourseRepositoryImpl implements CourseRepository {
     }
 
     @Override
-    public void update(String courseName, HW2Course course) {
+    public void update(String id, HW2Course course) {
         dbHelper = new FeedReaderDbHelper(context);//context
         db = dbHelper.getWritableDatabase();
 
@@ -66,9 +66,9 @@ public class CourseRepositoryImpl implements CourseRepository {
         contentValues.put("notice", dto.getCourseNotice());
         contentValues.put("remark", dto.getCourseRemark());
 
-        String updateCourse = courseName;
-        String selection = COLUMN_NAME_COURSENAME + " = ?";
-        String[] selectionArgs = { updateCourse };
+        String courseID = id;
+        String selection = _ID + " = ?";
+        String[] selectionArgs = { courseID };
 
         db.update(
                 TABLE_NAME,

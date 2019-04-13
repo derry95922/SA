@@ -5,16 +5,6 @@ import com.example.sa_hw.HW2UseCase.CourseRepository;
 
 public class UpdateCourseImpl implements UpdateCourse{
 
-    private String courseName;
-
-    public String getCourseName() {
-        return courseName;
-    }
-
-    public void setCourseName(String courseName) {
-        this.courseName = courseName;
-    }
-
     private CourseRepository courseRepository;
 
     public UpdateCourseImpl(CourseRepository courseRepository){
@@ -30,6 +20,6 @@ public class UpdateCourseImpl implements UpdateCourse{
                                             input.getCourseNotice(),
                                             input.getCourseRemark());
         output.setNewCourseName(input.getCourseName());
-        courseRepository.update(input.getCourseName(),hw2Course);
+        courseRepository.update(input.getCourseID(),hw2Course);
     }
 }

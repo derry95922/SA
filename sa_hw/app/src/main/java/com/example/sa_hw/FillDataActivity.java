@@ -96,6 +96,7 @@ public class FillDataActivity extends AppCompatActivity implements View.OnClickL
                 courseNotice = findViewById(R.id.courseNotice);
                 courseRemark = findViewById(R.id.courseRemark);
 
+                String id = updateData.getStringExtra("_id");
                 String name = courseName.getText().toString().trim();
                 String introduction = courseIntro.getText().toString().trim();
                 String suitable = courseSuitable.getText().toString().trim();
@@ -106,7 +107,7 @@ public class FillDataActivity extends AppCompatActivity implements View.OnClickL
                 CourseRepository courseRepository = new CourseRepositoryImpl(this);
                 UpdateCourse updateCourse = new UpdateCourseImpl(courseRepository);
 
-                UpdateCourseInput input = new UpdateCourseInputImpl(name,introduction,suitable,price,notice,remark);
+                UpdateCourseInput input = new UpdateCourseInputImpl(id,name,introduction,suitable,price,notice,remark);
                 UpdateCourseOutput output = new UpdateCourseOutputImpl();
 
                 if ("".equals(name)){
