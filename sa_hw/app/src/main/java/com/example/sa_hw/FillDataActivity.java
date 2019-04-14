@@ -105,7 +105,7 @@ public class FillDataActivity extends AppCompatActivity implements View.OnClickL
                 String remark = courseRemark.getText().toString().trim();
 
                 CourseRepository courseRepository = new CourseRepositoryImpl(this);
-                UpdateCourse updateCourse = new UpdateCourseImpl(courseRepository);
+                UpdateCourse updateCourseUC = new UpdateCourseImpl(courseRepository);
 
                 UpdateCourseInput input = new UpdateCourseInputImpl(id,name,introduction,suitable,price,notice,remark);
                 UpdateCourseOutput output = new UpdateCourseOutputImpl();
@@ -113,7 +113,7 @@ public class FillDataActivity extends AppCompatActivity implements View.OnClickL
                 if ("".equals(name)){
                     Toast.makeText(FillDataActivity.this," 課程名稱不可為空白 ! ", Toast.LENGTH_LONG).show();
                 }else {
-                    updateCourse.execute(input,output);
+                    updateCourseUC.execute(input,output);
                     finish();
                 }
 

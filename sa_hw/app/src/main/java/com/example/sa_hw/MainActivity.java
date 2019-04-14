@@ -13,6 +13,15 @@ import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.Toast;
 
+import com.example.sa_hw.HW2UseCase.CourseRepository;
+import com.example.sa_hw.HW2UseCase.CourseRepositoryImpl;
+import com.example.sa_hw.HW2UseCase.DeleteCourse.DeleteCourse;
+import com.example.sa_hw.HW2UseCase.DeleteCourse.DeleteCourseImpl;
+import com.example.sa_hw.HW2UseCase.DeleteCourse.DeleteCourseInput;
+import com.example.sa_hw.HW2UseCase.DeleteCourse.DeleteCourseInputImpl;
+import com.example.sa_hw.HW2UseCase.DeleteCourse.DeleteCourseOutput;
+import com.example.sa_hw.HW2UseCase.DeleteCourse.DeleteCourseOutputImpl;
+
 import static android.provider.BaseColumns._ID;
 import static com.example.sa_hw.FeedReaderContract.FeedEntry.TABLE_NAME;
 
@@ -116,13 +125,18 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     public void deleteData(String id){
-        String selection = _ID + " = ?";
-        String[] selectionArgs = { id };
+        CourseRepository courseRepository = new CourseRepositoryImpl(this);
+        DeleteCourse deleteCourseUC = new DeleteCourseImpl(courseRepository);
 
-//        DeleteUseCase deleteUseCase = DeleteUseCase();
-//        String selection = deleteUseCase.
+        DeleteCourseInput input = new DeleteCourseInputImpl(id);
+        DeleteCourseOutput output = new DeleteCourseOutputImpl();
 
-        int deletedRow = db.delete(TABLE_NAME, selection, selectionArgs);
-        Log.d("deleteButton",Integer.toString(deletedRow));
+        deleteCourseUC.execute(input,output);
+//
+//        String selection = _ID + " = ?";
+//        String[] selectionArgs = { id };
+//
+//        int deletedRow = db.delete(TABLE_NAME, selection, selectionArgs);
+//        Log.d("deleteButton",Integer.toString(deletedRow));
     }
 }

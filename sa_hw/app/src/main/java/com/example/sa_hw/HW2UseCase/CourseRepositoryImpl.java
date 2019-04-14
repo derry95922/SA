@@ -21,12 +21,12 @@ public class CourseRepositoryImpl implements CourseRepository {
 
     public CourseRepositoryImpl(Context context){
         this.context = context;
+        dbHelper = new FeedReaderDbHelper(context);//context
+        db = dbHelper.getWritableDatabase();
     }
 
     @Override
     public void create(HW2Course course) {
-        dbHelper = new FeedReaderDbHelper(context);//context
-        db = dbHelper.getWritableDatabase();
 
         CourseDTO dto = new CourseDTO(course.getCourseName(),
                                         course.getCourseIntroduction(),
@@ -48,8 +48,6 @@ public class CourseRepositoryImpl implements CourseRepository {
 
     @Override
     public void update(String id, HW2Course course) {
-        dbHelper = new FeedReaderDbHelper(context);//context
-        db = dbHelper.getWritableDatabase();
 
         CourseDTO dto = new CourseDTO(course.getCourseName(),
                 course.getCourseIntroduction(),
@@ -66,14 +64,22 @@ public class CourseRepositoryImpl implements CourseRepository {
         contentValues.put("notice", dto.getCourseNotice());
         contentValues.put("remark", dto.getCourseRemark());
 
-        String courseID = id;
         String selection = _ID + " = ?";
-        String[] selectionArgs = { courseID };
+        String[] selectionArgs = { id };
 
         db.update(
                 TABLE_NAME,
                 contentValues,
                 selection,
                 selectionArgs);
+    }
+
+    @Override
+    public void delete(String id) {
+
+        String selection = _ID + " = ?";
+        String[] selectionArgs = { id };
+
+        db.delete(TABLE_NAME, selection, selectionArgs);
     }
 }
