@@ -1,5 +1,6 @@
 package com.example.sa_hw;
 
+import android.content.Context;
 import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
@@ -21,8 +22,13 @@ import com.example.sa_hw.HW2UseCase.DeleteCourse.DeleteCourseInput;
 import com.example.sa_hw.HW2UseCase.DeleteCourse.DeleteCourseInputImpl;
 import com.example.sa_hw.HW2UseCase.DeleteCourse.DeleteCourseOutput;
 import com.example.sa_hw.HW2UseCase.DeleteCourse.DeleteCourseOutputImpl;
+import com.example.sa_hw.HW2UseCase.ReadCourse.ReadCourse;
+import com.example.sa_hw.HW2UseCase.ReadCourse.ReadCourseImpl;
+import com.example.sa_hw.HW2UseCase.ReadCourse.ReadCourseInput;
+import com.example.sa_hw.HW2UseCase.ReadCourse.ReadCourseInputImpl;
+import com.example.sa_hw.HW2UseCase.ReadCourse.ReadCourseOutput;
+import com.example.sa_hw.HW2UseCase.ReadCourse.ReadCourseOutputImpl;
 
-import static android.provider.BaseColumns._ID;
 import static com.example.sa_hw.FeedReaderContract.FeedEntry.TABLE_NAME;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener, AdapterView.OnItemClickListener{
@@ -31,7 +37,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private Button buttonDelete;
     private Button buttonUpdate;
     private Button buttonCreate;
-    private ListView list_view_id_data;
+    public ListView list_view_id_data;
     private FeedReaderDbHelper dbHelper;
     private SQLiteDatabase db;
     private EditText editTextId;
@@ -118,10 +124,19 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     public void readData(){
-        db = dbHelper.getReadableDatabase();
-        Cursor cursor = db.rawQuery("SELECT * FROM " + TABLE_NAME, null);
-        MyCursorAdapter myCursorAdapter = new MyCursorAdapter(this, cursor);
-        list_view_id_data.setAdapter(myCursorAdapter);
+
+        CourseRepository courseRepository = new CourseRepositoryImpl(this);
+        ReadCourse readCourseUC = new ReadCourseImpl(courseRepository);
+
+        ReadCourseInput input = new ReadCourseInputImpl(this,list_view_id_data);
+        ReadCourseOutput output = new ReadCourseOutputImpl();
+
+        readCourseUC.execute(input,output);
+
+//        db = dbHelper.getReadableDatabase();
+//        Cursor cursor = db.rawQuery("SELECT * FROM " + TABLE_NAME, null);
+//        MyCursorAdapter myCursorAdapter = new MyCursorAdapter(this, cursor);
+//        list_view_id_data.setAdapter(myCursorAdapter);
     }
 
     public void deleteData(String id){

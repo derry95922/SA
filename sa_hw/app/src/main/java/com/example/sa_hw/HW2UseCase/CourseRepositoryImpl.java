@@ -2,6 +2,7 @@ package com.example.sa_hw.HW2UseCase;
 
 import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.widget.Toast;
 
@@ -81,5 +82,11 @@ public class CourseRepositoryImpl implements CourseRepository {
         String[] selectionArgs = { id };
 
         db.delete(TABLE_NAME, selection, selectionArgs);
+    }
+
+    @Override
+    public Cursor readAll() {
+        Cursor cursor = db.rawQuery("SELECT * FROM " + TABLE_NAME, null);
+        return cursor;
     }
 }
