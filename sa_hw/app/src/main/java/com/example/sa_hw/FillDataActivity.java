@@ -25,7 +25,6 @@ import com.example.sa_hw.HW2UseCase.UpdateCourse.UpdateCourseInput;
 import com.example.sa_hw.HW2UseCase.UpdateCourse.UpdateCourseInputImpl;
 import com.example.sa_hw.HW2UseCase.UpdateCourse.UpdateCourseOutput;
 import com.example.sa_hw.HW2UseCase.UpdateCourse.UpdateCourseOutputImpl;
-import com.example.sa_hw.usecase.UpdateUseCase;
 
 import static android.provider.BaseColumns._ID;
 import static com.example.sa_hw.FeedReaderContract.FeedEntry.COLUMN_NAME_COURSENAME;

@@ -10,8 +10,6 @@ import android.widget.CheckBox;
 import android.widget.CursorAdapter;
 import android.widget.TextView;
 
-import com.example.sa_hw.domain.Course;
-import com.example.sa_hw.usecase.ReadUseCase;
 
 public class MyCursorAdapter extends CursorAdapter {
 
@@ -34,16 +32,9 @@ public class MyCursorAdapter extends CursorAdapter {
 
         LayoutInflater inflater = LayoutInflater.from(context);
         View view = inflater.inflate(R.layout.activity_list_view,parent,false);
-//**usecase
-
-        ReadUseCase readUseCase = new ReadUseCase(view,inflater,null);
-        View readOutput = readUseCase.ReadData();
-        Log. i("cursor" ,"newView=" +view);
-
-        return readOutput;
 
 //viewholder跑的
-/*
+
         ViewHolder viewHolder = new ViewHolder();
         viewHolder.tx_id = view.findViewById(R.id.dataId);
         viewHolder.tx_name = view.findViewById(R.id.dataName);
@@ -55,7 +46,7 @@ public class MyCursorAdapter extends CursorAdapter {
 
         view.setTag(viewHolder);
         return view;
-*/
+
 
 /*
 **without usecase
@@ -72,6 +63,7 @@ public class MyCursorAdapter extends CursorAdapter {
 //        Log. i("cursor" ,"newView=" +view);
 //        return view;
 */
+
 // original
 //       return LayoutInflater.from(context).inflate(R.layout.activity_list_view, parent, false);
     }
@@ -80,10 +72,8 @@ public class MyCursorAdapter extends CursorAdapter {
     public void bindView(View view, Context context, Cursor cursor) {
         Log. i("cursor" ,"bindView=" +view);
 
-        ReadUseCase readUseCase = new ReadUseCase(view,null,cursor);
-        readUseCase.resultBindView(cursor);
 //viewholder跑的
-/*
+
         ViewHolder viewHolder = (ViewHolder) view.getTag();
         int id = cursor.getInt(cursor.getColumnIndexOrThrow("_id"));
         String name = cursor.getString(cursor.getColumnIndexOrThrow("name"));
@@ -100,7 +90,7 @@ public class MyCursorAdapter extends CursorAdapter {
         viewHolder.tx_price.setText("定價 : " + price);
         viewHolder.tx_notice.setText("注意事項 : " + notice);
         viewHolder.tx_remark.setText("備註 : " + remark);
-*/
+
 /*
 original
   TextView dataId = view.findViewById(R.id.dataId);

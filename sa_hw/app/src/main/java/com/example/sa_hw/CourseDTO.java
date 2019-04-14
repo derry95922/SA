@@ -1,4 +1,4 @@
-package com.example.sa_hw.HW2Adapter.Controller;
+package com.example.sa_hw;
 
 public class CourseDTO {
 

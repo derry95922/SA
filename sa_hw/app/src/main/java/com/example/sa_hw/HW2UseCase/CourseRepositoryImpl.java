@@ -4,13 +4,10 @@ import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
-import android.widget.Toast;
 
 import com.example.sa_hw.FeedReaderDbHelper;
-import com.example.sa_hw.FillDataActivity;
-import com.example.sa_hw.HW2Adapter.Controller.CourseDTO;
+import com.example.sa_hw.CourseDTO;
 import com.example.sa_hw.HW2Domain.HW2Course;
-import com.example.sa_hw.HW2UseCase.CourseRepository;
 
 import static android.provider.BaseColumns._ID;
 import static com.example.sa_hw.FeedReaderContract.FeedEntry.TABLE_NAME;
