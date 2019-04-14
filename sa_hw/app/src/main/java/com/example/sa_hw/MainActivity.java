@@ -31,7 +31,7 @@ import com.example.sa_hw.HW2UseCase.ReadCourse.ReadCourseOutputImpl;
 
 import static com.example.sa_hw.FeedReaderContract.FeedEntry.TABLE_NAME;
 
-public class MainActivity extends AppCompatActivity implements View.OnClickListener, AdapterView.OnItemClickListener{
+public class MainActivity extends AppCompatActivity implements AdapterView.OnItemClickListener{
 
     private Button buttonRead;
     private Button buttonDelete;
@@ -52,50 +52,54 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         editTextId = findViewById(R.id.editTextId);
 
         buttonCreate = findViewById(R.id.buttonCreate);
-        buttonCreate.setOnClickListener(this);
+        buttonCreate.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                createData();
+            }
+        });
 
         buttonRead = findViewById(R.id.buttonRead);
-        buttonRead.setOnClickListener(this);
+        buttonRead.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                readData();
+            }
+        });
 
         buttonDelete = findViewById(R.id.buttonDelete);
-        buttonDelete.setOnClickListener(this);
+        buttonDelete.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String id = editTextId.getText().toString().trim();
+                if("".equals(id)){
+                    Toast.makeText(MainActivity.this," 請選擇要刪除的課程 ID ! ", Toast.LENGTH_LONG).show();
+                }else {
+                    deleteData(id);
+                }
+                readData();
+            }
+        });
 
         buttonUpdate = findViewById(R.id.buttonUpdate);
-        buttonUpdate.setOnClickListener(this);
+        buttonUpdate.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String id = editTextId.getText().toString().trim();
+                if("".equals(id)){
+                    Toast.makeText(MainActivity.this," 請選擇要修改的課程 ID ! ", Toast.LENGTH_LONG).show();
+                }else{
+                    Intent updateData = new Intent(getApplicationContext(), FillDataActivity.class);
+                    setData(updateData);
+                    startActivity(updateData);
+                }
+            }
+        });
 
         list_view_id_data = findViewById(R.id.list_view_id_data);
         list_view_id_data.setOnItemClickListener(this);
     }
 
-    @Override
-    public void onClick(View v) {
-        if(v.getId()==R.id.buttonCreate){
-            Intent createData = new Intent(this, FillDataActivity.class);
-            startActivity(createData);
-        }else if(v.getId()==R.id.buttonRead){
-            db = dbHelper.getReadableDatabase();
-            Cursor cursor = db.rawQuery("SELECT * FROM " + TABLE_NAME, null);
-            MyCursorAdapter myCursorAdapter = new MyCursorAdapter(this, cursor);
-            list_view_id_data.setAdapter(myCursorAdapter);
-        }else if(v.getId()==R.id.buttonDelete){
-            String id = editTextId.getText().toString().trim();
-            if("".equals(id)){
-                Toast.makeText(MainActivity.this," 請選擇要刪除的課程 ID ! ", Toast.LENGTH_LONG).show();
-            }else {
-                deleteData(id);
-            }
-            readData();
-        }else if(v.getId()==R.id.buttonUpdate){
-            String id = editTextId.getText().toString().trim();
-            if("".equals(id)){
-                Toast.makeText(MainActivity.this," 請選擇要修改的課程 ID ! ", Toast.LENGTH_LONG).show();
-            }else{
-                Intent updateData = new Intent(getApplicationContext(), FillDataActivity.class);
-                setData(updateData);
-                startActivity(updateData);
-            }
-        }
-    }
 
     @Override
     public void onItemClick(AdapterView<?> list_view_id_data, View view, int position, long id) {
@@ -132,11 +136,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         ReadCourseOutput output = new ReadCourseOutputImpl();
 
         readCourseUC.execute(input,output);
+    }
 
-//        db = dbHelper.getReadableDatabase();
-//        Cursor cursor = db.rawQuery("SELECT * FROM " + TABLE_NAME, null);
-//        MyCursorAdapter myCursorAdapter = new MyCursorAdapter(this, cursor);
-//        list_view_id_data.setAdapter(myCursorAdapter);
+    public void createData(){
+        Intent createData = new Intent(getApplicationContext(), FillDataActivity.class);
+        startActivity(createData);
     }
 
     public void deleteData(String id){
@@ -147,11 +151,5 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         DeleteCourseOutput output = new DeleteCourseOutputImpl();
 
         deleteCourseUC.execute(input,output);
-//
-//        String selection = _ID + " = ?";
-//        String[] selectionArgs = { id };
-//
-//        int deletedRow = db.delete(TABLE_NAME, selection, selectionArgs);
-//        Log.d("deleteButton",Integer.toString(deletedRow));
     }
 }

@@ -31,7 +31,7 @@ import static android.provider.BaseColumns._ID;
 import static com.example.sa_hw.FeedReaderContract.FeedEntry.COLUMN_NAME_COURSENAME;
 import static com.example.sa_hw.FeedReaderContract.FeedEntry.TABLE_NAME;
 
-public class FillDataActivity extends AppCompatActivity implements View.OnClickListener{
+public class FillDataActivity extends AppCompatActivity{
 
     private Button buttonFinishUpdate;
     private Button buttonDiscardUpdate;
@@ -52,16 +52,67 @@ public class FillDataActivity extends AppCompatActivity implements View.OnClickL
         dbHelper = new FeedReaderDbHelper(this);
 
         updateData = getIntent();
-        if(updateData.hasExtra("_id"))fillListViewText(updateData);
+        if(updateData.hasExtra("_id"))setEditText(updateData);
 
         buttonFinishUpdate = findViewById(R.id.buttonFinishUpdate);
-        buttonFinishUpdate.setOnClickListener(this);
+        buttonFinishUpdate.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+            courseName = findViewById(R.id.courseName);
+            courseIntro = findViewById(R.id.courseIntro);
+            courseSuitable = findViewById(R.id.courseSuitable);
+            coursePrice = findViewById(R.id.coursePrice);
+            courseNotice = findViewById(R.id.courseNotice);
+            courseRemark = findViewById(R.id.courseRemark);
+
+            String id = updateData.getStringExtra("_id");
+            String name = courseName.getText().toString().trim();
+            String introduction = courseIntro.getText().toString().trim();
+            String suitable = courseSuitable.getText().toString().trim();
+            int price = Integer.parseInt(coursePrice.getText().toString().trim());
+            String notice = courseNotice.getText().toString().trim();
+            String remark = courseRemark.getText().toString().trim();
+
+            if(updateData.hasExtra("_id")){
+                CourseRepository courseRepository = new CourseRepositoryImpl(getApplicationContext());
+                UpdateCourse updateCourseUC = new UpdateCourseImpl(courseRepository);
+
+                UpdateCourseInput input = new UpdateCourseInputImpl(id,name,introduction,suitable,price,notice,remark);
+                UpdateCourseOutput output = new UpdateCourseOutputImpl();
+
+                if ("".equals(name)){
+                    Toast.makeText(FillDataActivity.this," 課程名稱不可為空白 ! ", Toast.LENGTH_LONG).show();
+                }else {
+                    updateCourseUC.execute(input,output);
+                    finish();
+                }
+            }else{
+                CourseRepository repository = new CourseRepositoryImpl(getApplicationContext());
+                CreateCourse createCourseUC = new CreateCourseImpl(repository);
+
+                CreateCourseInput input = new CreateCourseInputImpl(name,introduction,suitable,price,notice,remark);
+                CreateCourseOutput output = new CreateCourseOutputImpl();
+
+                if ("".equals(name)){
+                    Toast.makeText(FillDataActivity.this," 課程名稱不可為空白 ! ", Toast.LENGTH_LONG).show();
+                }else {
+                    createCourseUC.execute(input,output);
+                    finish();
+                }
+            }
+            }
+        });
 
         buttonDiscardUpdate = findViewById(R.id.buttonDiscardUpdate);
-        buttonDiscardUpdate.setOnClickListener(this);
+        buttonDiscardUpdate.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
     }
 
-    public void fillListViewText(Intent updateData){
+    public void setEditText(Intent updateData){
         String name = updateData.getStringExtra("courseName");
         String introduction = updateData.getStringExtra("introduction");
         String suitable = updateData.getStringExtra("suitable");
@@ -83,93 +134,5 @@ public class FillDataActivity extends AppCompatActivity implements View.OnClickL
         coursePrice.setText(price);
         courseNotice.setText(notice);
         courseRemark.setText(remark);
-    }
-
-    @Override
-    public void onClick(View v) {
-        if(v.getId() == R.id.buttonFinishUpdate){
-            if(updateData.hasExtra("_id")){
-                courseName = findViewById(R.id.courseName);
-                courseIntro = findViewById(R.id.courseIntro);
-                courseSuitable = findViewById(R.id.courseSuitable);
-                coursePrice = findViewById(R.id.coursePrice);
-                courseNotice = findViewById(R.id.courseNotice);
-                courseRemark = findViewById(R.id.courseRemark);
-
-                String id = updateData.getStringExtra("_id");
-                String name = courseName.getText().toString().trim();
-                String introduction = courseIntro.getText().toString().trim();
-                String suitable = courseSuitable.getText().toString().trim();
-                int price = Integer.parseInt(coursePrice.getText().toString().trim());
-                String notice = courseNotice.getText().toString().trim();
-                String remark = courseRemark.getText().toString().trim();
-
-                CourseRepository courseRepository = new CourseRepositoryImpl(this);
-                UpdateCourse updateCourseUC = new UpdateCourseImpl(courseRepository);
-
-                UpdateCourseInput input = new UpdateCourseInputImpl(id,name,introduction,suitable,price,notice,remark);
-                UpdateCourseOutput output = new UpdateCourseOutputImpl();
-
-                if ("".equals(name)){
-                    Toast.makeText(FillDataActivity.this," 課程名稱不可為空白 ! ", Toast.LENGTH_LONG).show();
-                }else {
-                    updateCourseUC.execute(input,output);
-                    finish();
-                }
-
-
-//                UpdateUseCase updateUseCase = new UpdateUseCase();
-//                updateUseCase.input(name, introduction, suitable, price, notice, remark);
-//                ContentValues updateOutput = updateUseCase.updateData();
-//
-//                db = dbHelper.getWritableDatabase();
-//                if ("".equals(name)){
-//                    Toast.makeText(FillDataActivity.this," 課程名稱不可為空白 ! ", Toast.LENGTH_LONG).show();
-//                }else{
-////                    String id = updateData.getStringExtra("_id");
-////                    String selection = _ID + " = ?";
-//                    String updateCourse = updateData.getStringExtra("courseName");
-//                    String selection = COLUMN_NAME_COURSENAME + " = ?";
-//                    String[] selectionArgs = { updateCourse };
-//
-//                    db.update(
-//                            TABLE_NAME,
-//                            updateOutput,
-//                            selection,
-//                            selectionArgs);
-//
-//                    finish();
-//                }
-            }else{
-                courseName = findViewById(R.id.courseName);
-                courseIntro = findViewById(R.id.courseIntro);
-                courseSuitable = findViewById(R.id.courseSuitable);
-                coursePrice = findViewById(R.id.coursePrice);
-                courseNotice = findViewById(R.id.courseNotice);
-                courseRemark = findViewById(R.id.courseRemark);
-
-                String name = courseName.getText().toString().trim();
-                String introduction = courseIntro.getText().toString().trim();
-                String suitable = courseSuitable.getText().toString().trim();
-                int price = Integer.parseInt(coursePrice.getText().toString().trim());
-                String notice = courseNotice.getText().toString().trim();
-                String remark = courseRemark.getText().toString().trim();
-
-                CourseRepository repository = new CourseRepositoryImpl(this);
-                CreateCourse createCourseUC = new CreateCourseImpl(repository);
-
-                CreateCourseInput input = new CreateCourseInputImpl(name,introduction,suitable,price,notice,remark);
-                CreateCourseOutput output = new CreateCourseOutputImpl();
-
-                if ("".equals(name)){
-                    Toast.makeText(FillDataActivity.this," 課程名稱不可為空白 ! ", Toast.LENGTH_LONG).show();
-                }else {
-                    createCourseUC.execute(input,output);
-                    finish();
-                }
-            }
-        }else {
-            finish();
-        }
     }
 }
