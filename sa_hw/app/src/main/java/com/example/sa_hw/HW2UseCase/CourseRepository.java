@@ -9,4 +9,6 @@ public interface CourseRepository {
     void update(String id, HW2Course course);
     void delete(String id);
     Cursor readAll();
+    Cursor getCourseByID(String id);
+    void destoryDB();
 }

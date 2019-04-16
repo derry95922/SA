@@ -29,7 +29,7 @@ public class CreateCourseImpl implements CreateCourse{
                                              input.getCoursePrice(),
                                              input.getCourseNotice(),
                                              input.getCourseRemark());
-        output.setCourseName(courseName);//?設CourseName
+        output.setCourseName(input.getCourseName());//?設CourseName
         courseRepository.create(hw2Course);
     }
 }

@@ -86,4 +86,19 @@ public class CourseRepositoryImpl implements CourseRepository {
         Cursor cursor = db.rawQuery("SELECT * FROM " + TABLE_NAME, null);
         return cursor;
     }
+
+    @Override
+    public Cursor getCourseByID(String id) {
+
+        String selection = _ID + "=?";
+        String[] selectionArgs = { id };
+
+        Cursor cursor = db.rawQuery("SELECT * FROM "+ TABLE_NAME + " WHERE " + selection , selectionArgs);
+        return cursor;
+    }
+
+    @Override
+    public void destoryDB() {
+        db.execSQL("delete from " + TABLE_NAME);
+    }
 }
