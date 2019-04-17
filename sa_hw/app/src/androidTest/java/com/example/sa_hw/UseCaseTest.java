@@ -40,6 +40,11 @@ import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
+import java.util.TreeMap;
+
 import static com.example.sa_hw.FeedReaderContract.FeedEntry.TABLE_NAME;
 import static org.junit.Assert.*;
 
@@ -164,5 +169,18 @@ public class UseCaseTest {
         Cursor cursor = courseRepository.readAll();
         cursor.moveToFirst();
         assertEquals("SA",cursor.getString(cursor.getColumnIndexOrThrow("name")));
+    }
+
+    @Test
+    public void test(){
+        List<String>test = new ArrayList<String>();
+        Map<Integer, List> inMemoryMap = new TreeMap<>();
+
+        test.add(0,"joe");
+        test.add(1,"derry");
+
+        Log.d("answer ", test.get(0));
+
+//        inMemoryMap.put(0,test);
     }
 }

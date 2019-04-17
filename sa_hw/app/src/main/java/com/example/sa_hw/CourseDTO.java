@@ -9,6 +9,8 @@ public class CourseDTO {
     private String courseNotice;
     private String courseRemark;
 
+//    private int id = 0;
+
     public CourseDTO(String name, String introduction, String suitable, int price, String notice, String remark){
         setCourseName(name);
         setCourseIntroduction(introduction);
@@ -66,4 +68,11 @@ public class CourseDTO {
         this.courseRemark = courseRemark;
     }
 
+//    public int getId() {
+//        return id;
+//    }
+//
+//    public void setId(int id) {
+//        this.id = id;
+//    }
 }

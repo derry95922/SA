@@ -9,6 +9,9 @@ import com.example.sa_hw.FeedReaderDbHelper;
 import com.example.sa_hw.CourseDTO;
 import com.example.sa_hw.HW2Domain.HW2Course;
 
+import java.util.Iterator;
+import java.util.Map;
+
 import static android.provider.BaseColumns._ID;
 import static com.example.sa_hw.FeedReaderContract.FeedEntry.TABLE_NAME;
 
@@ -100,5 +103,10 @@ public class CourseRepositoryImpl implements CourseRepository {
     @Override
     public void destoryDB() {
         db.execSQL("delete from " + TABLE_NAME);
+    }
+
+    @Override
+    public Iterator<Map.Entry<Integer,CourseDTO>> readinmemory() {
+        return null;
     }
 }
