@@ -4,7 +4,7 @@ import java.util.UUID;
 
 public class SwimLane {
     private String miniStageId, name, swimLaneId;
-    private List<SwimLane>swimLanes = new ArrayList<>();
+    private int wip = 0;
 
     public SwimLane(String miniStageId, String name){
         this.miniStageId = miniStageId;
@@ -16,11 +16,7 @@ public class SwimLane {
         return swimLaneId;
     }
 
-    public String getSwimLaneName() {
-        return name;
-    }
-
-    public int getSwimLanesSize() {
-        return swimLanes.size();
+    public int getWIP() {
+        return this.wip;
     }
 }

@@ -23,10 +23,6 @@ public class MiniStage {
         return miniStageId;
     }
 
-    public String getMiniStageName() {
-        return name;
-    }
-
     public int getSwimLaneSize() {
         return swimLanes.size();
     }
@@ -35,7 +31,15 @@ public class MiniStage {
         return stageId;
     }
 
-    public List<SwimLane> getSwimLaneList(){
-        return swimLanes;
+    public String getMinStageId() {
+        return miniStageId;
+    }
+
+    public SwimLane getSwimLane(String swimLaneId) {
+        for(int i=0;i<swimLanes.size();i++){
+            if(swimLanes.get(i).getSwimLaneId().equals(swimLaneId))
+                return swimLanes.get(i);
+        }
+        throw new RuntimeException("Swim Lane not found");
     }
 }

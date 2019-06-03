@@ -3,24 +3,21 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 
 public class CreateMiniStageUseCaseTest {
+
     @Test
-    public void createMiniStage(){
+    public void CreateMiniStageInClass(){
         StageRepository stageRepository = new InMemoryStageRepository();
-        CreateStageUseCase createStageUC = new CreateStageUseCase(stageRepository);
-        CreateStageInput createStageInput = new CreateStageInput(1, "first Stage");
-        CreateStageOutput createStageOutput = new CreateStageOutput();
-        createStageUC.execute(createStageInput,createStageOutput);
 
-        CreateMiniStageUseCase  createMiniStageUC = new CreateMiniStageUseCase(stageRepository);
-        CreateMiniStageInput createMiniStageInput = new CreateMiniStageInput(createStageOutput.getStageId(), "first MiniStage");
-        CreateMiniStageOutput createMiniStageOutput = new CreateMiniStageOutput();
-        createMiniStageUC.execute(createMiniStageInput, createMiniStageOutput);
+        String stageId = Utility.createStage(stageRepository, 1, "first stage");
+        assertNotNull(stageId);
+        Stage stage = stageRepository.findStage(stageId);
+        assertEquals(1, stage.getMiniStageSize());
 
-        assertNotNull(createMiniStageOutput.getMiniStageId());
-        assertEquals(2, stageRepository.findStage(createStageOutput.getStageId()).getMiniStageSize());
+        String miniStageId = Utility.createMiniStage(stageId, stageRepository);
+        assertNotNull(miniStageId);
+        assertEquals(2, stage.getMiniStageSize());
 
-        MiniStage miniStage = stageRepository.findMiniStage(createMiniStageOutput.getMiniStageId());
-        assertEquals(createMiniStageInput.getMiniStageName(), miniStage.getMiniStageName());
-        assertEquals(1,miniStage.getSwimLaneSize());
+        MiniStage miniStage = stage.getMiniStage(miniStageId);
+        assertEquals(1, miniStage.getSwimLaneSize());
     }
 }

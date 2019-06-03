@@ -1,16 +1,21 @@
 public class CreateSwimLaneInput {
-    private String miniStageId, name;
+    private String miniStageId, name, stageId;
 
-    public CreateSwimLaneInput(String miniStageId, String name){
+    public CreateSwimLaneInput(String stageId, String miniStageId, String name){
         this.miniStageId = miniStageId;
         this.name = name;
+        this.stageId = stageId;
     }
 
     public String getMiniStageId() {
         return miniStageId;
     }
 
-    public String getMiniStageName() {
+    public String getStageId(){
+        return stageId;
+    }
+
+    public String getSwimLaneName() {
         return name;
     }
 }

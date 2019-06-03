@@ -2,8 +2,27 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c6fe8493-a322-44c4-88c3-e9da32d1fcc8" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/CreateWorkItemInput.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/CreateWorkItemOutput.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/CreateWorkItemUseCase.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/InMemoryWorkItemRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/WorkItem.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/WorkItemRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/CreateSwimLaneUseCaseTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/CreateWorkItemUseCaseTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/Utility.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../sa_hw/app/src/main/java/com/example/sa_hw/Repository/CursorDTO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/CreateSwimLaneInput.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/CreateSwimLaneInput.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/CreateSwimLaneUseCase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/CreateSwimLaneUseCase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/InMemoryStageRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/InMemoryStageRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/MiniStage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MiniStage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Stage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Stage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/StageRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/StageRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/SwimLane.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/SwimLane.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/CreateMiniStageUseCaseTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/CreateMiniStageUseCaseTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/CreateStageUseCaseTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/CreateStageUseCaseTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/CreateSwimLaneTest.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../sa_hw/app/src/androidTest/java/com/example/sa_hw/UseCaseTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../sa_hw/app/src/androidTest/java/com/example/sa_hw/UseCaseTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../sa_hw/app/src/main/java/com/example/sa_hw/FillDataActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/../sa_hw/app/src/main/java/com/example/sa_hw/FillDataActivity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../sa_hw/app/src/main/java/com/example/sa_hw/HW2UseCase/CourseRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../sa_hw/app/src/main/java/com/example/sa_hw/Repository/CourseRepository.java" afterDir="false" />
@@ -34,65 +53,61 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/CreateSwimLaneOutput.java">
+        <entry file="file://$PROJECT_DIR$/src/test/java/Utility.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="144">
-              <caret line="8" column="5" selection-start-line="8" selection-start-column="5" selection-end-line="8" selection-end-column="5" />
+            <state>
+              <caret column="13" selection-start-column="13" selection-end-column="13" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/CreateSwimLaneInput.java">
+        <entry file="file://$PROJECT_DIR$/src/test/java/CreateStageUseCaseTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="13" column="20" selection-start-line="13" selection-start-column="20" selection-end-line="13" selection-end-column="20" />
+            <state relative-caret-position="-432">
+              <caret line="6" lean-forward="true" selection-start-line="6" selection-start-column="2" selection-end-line="28" selection-end-column="7" />
               <folding>
-                <element signature="e#247#248#0" expanded="true" />
-                <element signature="e#281#282#0" expanded="true" />
-                <element signature="e#321#322#0" expanded="true" />
-                <element signature="e#348#349#0" expanded="true" />
+                <element signature="imports" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/CreateStageUseCase.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="168">
-              <caret line="9" column="21" selection-start-line="9" selection-start-column="21" selection-end-line="9" selection-end-column="21" />
-            </state>
-          </provider>
+        <entry file="file://$PROJECT_DIR$/src/main/java/CreateWorkItemOutput.java">
+          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/CreateMiniStageUseCase.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="168">
-              <caret line="9" column="22" selection-start-line="9" selection-start-column="22" selection-end-line="9" selection-end-column="22" />
-            </state>
-          </provider>
+        <entry file="file://$PROJECT_DIR$/src/main/java/CreateWorkItemUseCase.java">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/CreateWorkItemInput.java">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/InMemoryWorkItemRepository.java">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/WorkItem.java">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/WorkItemRepository.java">
+          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/CreateSwimLaneUseCase.java">
+        <entry file="file://$PROJECT_DIR$/src/test/java/CreateSwimLaneUseCaseTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="264">
-              <caret line="11" column="38" lean-forward="true" selection-start-line="11" selection-start-column="38" selection-end-line="11" selection-end-column="38" />
-              <folding>
-                <element signature="e#147#148#0" expanded="true" />
-                <element signature="e#201#202#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/SwimLane.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="72">
-              <caret line="5" column="19" selection-start-line="5" selection-start-column="19" selection-end-line="5" selection-end-column="19" />
+            <state relative-caret-position="792">
+              <caret line="48" column="35" selection-start-line="48" selection-start-column="35" selection-end-line="48" selection-end-column="35" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -101,47 +116,9 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/StageRepository.java">
+        <entry file="file://$PROJECT_DIR$/src/test/java/CreateWorkItemUseCaseTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="168">
-              <caret line="7" column="45" selection-start-line="7" selection-start-column="45" selection-end-line="7" selection-end-column="45" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/Stage.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="512">
-              <caret line="34" column="18" selection-start-line="34" selection-start-column="18" selection-end-line="34" selection-end-column="18" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#807#808#0" expanded="true" />
-                <element signature="e#840#841#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/MiniStage.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="744">
-              <caret line="41" lean-forward="true" selection-start-line="41" selection-end-line="41" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#837#838#0" expanded="true" />
-                <element signature="e#867#868#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/InMemoryStageRepository.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="936">
-              <caret line="42" column="17" selection-start-line="42" selection-start-column="17" selection-end-line="42" selection-end-column="17" />
+            <state>
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -173,18 +150,22 @@
         <option value="$PROJECT_DIR$/src/test/java/MiniStageTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/CreateMiniStageUseCase.java" />
         <option value="$PROJECT_DIR$/src/main/java/CreateMiniStageInput.java" />
-        <option value="$PROJECT_DIR$/src/main/java/Stage.java" />
         <option value="$PROJECT_DIR$/src/test/java/SwimLaneTest.java" />
-        <option value="$PROJECT_DIR$/src/test/java/CreateMiniStageUseCaseTest.java" />
-        <option value="$PROJECT_DIR$/src/main/java/CreateSwimLaneUseCase.java" />
-        <option value="$PROJECT_DIR$/src/main/java/CreateSwimLaneInput.java" />
         <option value="$PROJECT_DIR$/src/main/java/CreateSwimLaneOutput.java" />
         <option value="$PROJECT_DIR$/src/main/java/CreateMiniStageOutput.java" />
-        <option value="$PROJECT_DIR$/src/main/java/SwimLane.java" />
+        <option value="$PROJECT_DIR$/src/test/java/Utility.java" />
+        <option value="$PROJECT_DIR$/src/test/java/CreateSwimLaneTest.java" />
+        <option value="$PROJECT_DIR$/src/test/java/CreateStageUseCaseTest.java" />
+        <option value="$PROJECT_DIR$/src/test/java/CreateMiniStageUseCaseTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/CreateSwimLaneUseCase.java" />
         <option value="$PROJECT_DIR$/src/main/java/StageRepository.java" />
         <option value="$PROJECT_DIR$/src/main/java/InMemoryStageRepository.java" />
-        <option value="$PROJECT_DIR$/src/test/java/CreateSwimLaneTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/CreateSwimLaneInput.java" />
         <option value="$PROJECT_DIR$/src/main/java/MiniStage.java" />
+        <option value="$PROJECT_DIR$/src/main/java/SwimLane.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Stage.java" />
+        <option value="$PROJECT_DIR$/src/test/java/CreateWorkItemUseCaseTest.java" />
+        <option value="$PROJECT_DIR$/src/test/java/CreateSwimLaneUseCaseTest.java" />
       </list>
     </option>
   </component>
@@ -199,23 +180,95 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="ProjectPane" />
-      <pane id="Scope" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="Kanban" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Kanban" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Kanban" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Kanban" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Kanban" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Kanban" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Kanban" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Kanban" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Kanban" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Kanban" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="CreateWorkItemUseCase" type="1a9f42e2:ClassTreeNode" />
+            </path>
+            <path>
+              <item name="Kanban" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Kanban" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="WorkItemRepository" type="1a9f42e2:ClassTreeNode" />
+            </path>
+            <path>
+              <item name="Kanban" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Kanban" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Kanban" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Kanban" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Kanban" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
       <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1558880567812" />
+    <property name="Downloaded.Files.Path.Enabled" value="false" />
+    <property name="Repository.Attach.Annotations" value="false" />
+    <property name="Repository.Attach.JavaDocs" value="false" />
+    <property name="Repository.Attach.Sources" value="false" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1559575770777" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit4" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4" value="" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
   </component>
   <component name="RecentsManager">
     <key name="CreateTestDialog.RecentsKey">
       <recent name="" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\fourbags\Desktop\SA\Kanban\src\main\java" />
     </key>
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
@@ -236,11 +289,23 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.All in Kanbon.test">
-    <configuration name="All in Kanbon.test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Kanbon.test" />
+  <component name="RunManager" selected="JUnit.CreateWorkItemUseCaseTest">
+    <configuration name="All in Kanbon.test" type="JUnit" factoryName="JUnit" nameIsGenerated="true">
+      <module name="Kanban" />
       <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="" />
+      <option name="METHOD_NAME" value="" />
       <option name="TEST_OBJECT" value="package" />
+      <option name="PARAMETERS" value="" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CreateMiniStageUseCaseTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Kanban" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="CreateMiniStageUseCaseTest" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -255,42 +320,41 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="CreateStageUseCaseTest.createTwoStage" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Kanbon.test" />
+    <configuration name="CreateSwimLaneUseCaseTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Kanban" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="CreateStageUseCaseTest" />
-      <option name="METHOD_NAME" value="createTwoStage" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="CreateSwimLaneTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Kanbon.test" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="CreateSwimLaneTest" />
+      <option name="MAIN_CLASS_NAME" value="CreateSwimLaneUseCaseTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="CreateSwimLaneTest.createSwimLane" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Kanbon.test" />
+    <configuration name="CreateSwimLaneUseCaseTest.createSwimLane" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Kanban" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="CreateSwimLaneTest" />
+      <option name="MAIN_CLASS_NAME" value="CreateSwimLaneUseCaseTest" />
       <option name="METHOD_NAME" value="createSwimLane" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="CreateWorkItemUseCaseTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Kanban" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="CreateWorkItemUseCaseTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.All in Kanbon.test" />
-        <item itemvalue="JUnit.CreateSwimLaneTest" />
-        <item itemvalue="JUnit.CreateSwimLaneTest.createSwimLane" />
+        <item itemvalue="JUnit.CreateWorkItemUseCaseTest" />
+        <item itemvalue="JUnit.CreateSwimLaneUseCaseTest" />
+        <item itemvalue="JUnit.CreateMiniStageUseCaseTest" />
+        <item itemvalue="JUnit.CreateSwimLaneUseCaseTest.createSwimLane" />
         <item itemvalue="JUnit.CreateMiniStageUseCaseTest.createMiniStage" />
-        <item itemvalue="JUnit.CreateStageUseCaseTest.createTwoStage" />
       </list>
     </recent_temporary>
   </component>
@@ -319,46 +383,61 @@
       <option name="project" value="LOCAL" />
       <updated>1558881168473</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="implement kanban with clean code">
+      <created>1558881469917</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1558881469917</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="All_in_Kanbon_test - 2019.05.26 at 21h 14m 39s.xml">
-      <configuration name="All in Kanbon.test" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="All_in_Kanbon_test - 2019.05.26 at 21h 16m 38s.xml">
-      <configuration name="All in Kanbon.test" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="All_in_Kanbon_test - 2019.05.26 at 21h 18m 02s.xml">
-      <configuration name="All in Kanbon.test" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="All_in_Kanbon_test - 2019.05.26 at 21h 22m 33s.xml">
-      <configuration name="All in Kanbon.test" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="CreateSwimLaneTest - 2019.05.26 at 21h 29m 14s.xml">
-      <configuration name="CreateSwimLaneTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="CreateSwimLaneTest - 2019.05.26 at 21h 29m 25s.xml">
-      <configuration name="CreateSwimLaneTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="CreateSwimLaneTest - 2019.05.26 at 21h 29m 33s.xml">
-      <configuration name="CreateSwimLaneTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="CreateSwimLaneTest - 2019.05.26 at 22h 08m 22s.xml">
-      <configuration name="CreateSwimLaneTest" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="CreateSwimLaneTest - 2019.05.26 at 22h 15m 37s.xml">
       <configuration name="CreateSwimLaneTest" configurationId="JUnit" />
     </history-entry>
     <history-entry file="CreateSwimLaneTest - 2019.05.26 at 22h 16m 19s.xml">
       <configuration name="CreateSwimLaneTest" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="All_in_Kanbon_test - 2019.05.26 at 22h 49m 34s.xml">
+      <configuration name="All in Kanbon.test" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="All_in_Kanbon_test - 2019.05.27 at 17h 31m 43s.xml">
+      <configuration name="All in Kanbon.test" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="All_in_Kanbon_test - 2019.06.03 at 23h 10m 45s.xml">
+      <configuration name="All in Kanbon.test" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="All_in_Kanbon_test - 2019.06.03 at 23h 25m 25s.xml">
+      <configuration name="All in Kanbon.test" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="All_in_Kanbon_test - 2019.06.03 at 23h 27m 42s.xml">
+      <configuration name="All in Kanbon.test" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="CreateWorkItemUseCaseTest - 2019.06.03 at 23h 28m 03s.xml">
+      <configuration name="CreateWorkItemUseCaseTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="CreateWorkItemUseCaseTest - 2019.06.03 at 23h 28m 09s.xml">
+      <configuration name="CreateWorkItemUseCaseTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="CreateMiniStageUseCaseTest - 2019.06.03 at 23h 28m 32s.xml">
+      <configuration name="CreateMiniStageUseCaseTest" configurationId="JUnit" />
+    </history-entry>
+  </component>
+  <component name="TodoView" selected-index="3">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24508321" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.30181542" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -367,13 +446,13 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.15220949" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.32786885" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39934534" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.3295082" />
       <window_info anchor="bottom" id="Version Control" order="7" weight="0.3295082" />
-      <window_info anchor="bottom" id="Terminal" order="8" />
+      <window_info anchor="bottom" id="Terminal" order="8" weight="0.3295082" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
       <window_info anchor="bottom" id="Build" order="10" weight="0.32569557" />
       <window_info anchor="bottom" id="Messages" order="11" weight="0.3289689" />
@@ -388,34 +467,34 @@
       <window_info anchor="right" id="Palette&#9;" order="8" />
     </layout>
     <layout-to-restore>
-      <window_info id="Image Layers" order="0" />
-      <window_info id="Designer" order="1" />
-      <window_info id="Capture Tool" order="2" />
-      <window_info id="UI Designer" order="3" />
-      <window_info id="Favorites" order="4" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="5" visible="true" weight="0.24962178" />
-      <window_info id="Structure" order="6" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Version Control" order="0" />
-      <window_info anchor="bottom" id="Terminal" order="1" />
-      <window_info anchor="bottom" id="Event Log" order="2" side_tool="true" />
-      <window_info anchor="bottom" id="Build" order="3" weight="0.32569557" />
-      <window_info anchor="bottom" id="Messages" order="4" weight="0.3289689" />
-      <window_info anchor="bottom" id="Message" order="5" />
-      <window_info anchor="bottom" id="Find" order="6" />
-      <window_info anchor="bottom" id="Run" order="7" visible="true" weight="0.33387887" />
-      <window_info anchor="bottom" id="Debug" order="8" weight="0.39934534" />
-      <window_info anchor="bottom" id="Cvs" order="9" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="10" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="11" />
-      <window_info anchor="right" id="Palette" order="0" />
-      <window_info anchor="right" id="Capture Analysis" order="1" />
-      <window_info anchor="right" id="Gradle" order="2" />
-      <window_info anchor="right" id="Theme Preview" order="3" />
-      <window_info anchor="right" id="Palette&#9;" order="4" />
-      <window_info anchor="right" id="Maven" order="5" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="6" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="7" weight="0.25" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="8" weight="0.25" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.26399395" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Image Layers" order="2" />
+      <window_info id="Designer" order="3" />
+      <window_info id="Capture Tool" order="4" />
+      <window_info id="UI Designer" order="5" />
+      <window_info id="Favorites" order="6" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.3327869" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.39934534" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.3295082" />
+      <window_info anchor="bottom" id="Version Control" order="7" weight="0.3295082" />
+      <window_info anchor="bottom" id="Terminal" order="8" weight="0.3295082" />
+      <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
+      <window_info anchor="bottom" id="Build" order="10" weight="0.32569557" />
+      <window_info anchor="bottom" id="Messages" order="11" weight="0.3289689" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Palette" order="3" />
+      <window_info anchor="right" id="Maven" order="4" />
+      <window_info anchor="right" id="Gradle" order="5" />
+      <window_info anchor="right" id="Theme Preview" order="6" />
+      <window_info anchor="right" id="Capture Analysis" order="7" />
+      <window_info anchor="right" id="Palette&#9;" order="8" />
     </layout-to-restore>
   </component>
   <component name="VcsManagerConfiguration">
@@ -423,23 +502,41 @@
     <option name="LAST_COMMIT_MESSAGE" value="implement kanban with clean code" />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/test/java/jlkjl.java" />
+    <entry file="file://$PROJECT_DIR$/src/test/java/CreateMiniStageUseCaseTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-495">
+          <caret line="5" column="6" selection-start-line="5" selection-start-column="6" selection-end-line="24" selection-end-column="7" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/CreateMiniStageInput.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="360">
           <caret line="15" column="20" selection-start-line="15" selection-start-column="20" selection-end-line="15" selection-end-column="20" />
           <folding>
             <element signature="e#249#250#0" expanded="true" />
-            <element signature="e#278#279#0" expanded="true" />
+            <element signature="e#279#280#0" expanded="true" />
             <element signature="e#319#320#0" expanded="true" />
-            <element signature="e#345#346#0" expanded="true" />
+            <element signature="e#346#347#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/CreateStageOutput.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/CreateMiniStageOutput.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="48">
-          <caret line="2" selection-start-line="2" selection-end-line="2" />
+        <state relative-caret-position="216">
+          <caret line="13" selection-start-line="13" selection-end-line="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/CreateMiniStageUseCase.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="13" selection-start-column="13" selection-end-column="13" />
         </state>
       </provider>
     </entry>
@@ -456,44 +553,24 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/CreateMiniStageOutput.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/CreateStageOutput.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="264">
-          <caret line="13" selection-start-line="13" selection-end-line="13" />
-          <folding>
-            <element signature="e#144#145#0" expanded="true" />
-            <element signature="e#178#179#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="48">
+          <caret line="2" selection-start-line="2" selection-end-line="2" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/CreateMiniStageUseCaseTest.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/CreateStageUseCase.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="21" column="10" selection-start-line="21" selection-start-column="10" selection-end-line="21" selection-end-column="10" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="168">
+          <caret line="9" column="28" selection-start-line="9" selection-start-column="28" selection-end-line="9" selection-end-column="28" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/CreateStageUseCaseTest.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/CreateSwimLaneInput.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-108">
-          <caret line="8" column="61" lean-forward="true" selection-start-line="8" selection-start-column="61" selection-end-line="8" selection-end-column="61" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/CreateSwimLaneTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="334">
-          <caret line="27" column="89" selection-start-line="27" selection-start-column="89" selection-end-line="27" selection-end-column="89" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="312">
+          <caret line="18" column="20" selection-start-line="18" selection-start-column="20" selection-end-line="18" selection-end-column="20" />
         </state>
       </provider>
     </entry>
@@ -504,30 +581,45 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/CreateSwimLaneInput.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/CreateSwimLaneUseCase.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="13" column="20" selection-start-line="13" selection-start-column="20" selection-end-line="13" selection-end-column="20" />
+        <state relative-caret-position="168">
+          <caret line="7" selection-start-line="7" selection-end-line="12" selection-end-column="42" />
           <folding>
-            <element signature="e#247#248#0" expanded="true" />
-            <element signature="e#281#282#0" expanded="true" />
-            <element signature="e#321#322#0" expanded="true" />
-            <element signature="e#348#349#0" expanded="true" />
+            <element signature="e#147#148#0" expanded="true" />
+            <element signature="e#201#202#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/CreateStageUseCase.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/InMemoryStageRepository.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="168">
-          <caret line="9" column="21" selection-start-line="9" selection-start-column="21" selection-end-line="9" selection-end-column="21" />
+        <state relative-caret-position="432">
+          <caret line="18" column="5" selection-start-line="18" selection-start-column="5" selection-end-line="18" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#226#227#0" expanded="true" />
+            <element signature="e#262#263#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/SwimLane.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/MiniStage.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="72">
-          <caret line="5" column="19" selection-start-line="5" selection-start-column="19" selection-end-line="5" selection-end-column="19" />
+        <state relative-caret-position="696">
+          <caret line="40" column="32" selection-start-line="40" selection-start-column="32" selection-end-line="40" selection-end-column="32" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#837#838#0" expanded="true" />
+            <element signature="e#871#872#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Stage.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="168">
+          <caret line="23" column="5" selection-start-line="23" selection-start-column="5" selection-end-line="23" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -536,59 +628,71 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/StageRepository.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="168">
-          <caret line="7" column="45" selection-start-line="7" selection-start-column="45" selection-end-line="7" selection-end-column="45" />
+        <state relative-caret-position="72">
+          <caret line="3" column="36" selection-start-line="3" selection-start-column="36" selection-end-line="3" selection-end-column="36" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/InMemoryStageRepository.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/SwimLane.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="936">
-          <caret line="42" column="17" selection-start-line="42" selection-start-column="17" selection-end-line="42" selection-end-column="17" />
+        <state relative-caret-position="368">
+          <caret line="19" column="24" selection-start-line="19" selection-start-column="24" selection-end-line="19" selection-end-column="24" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/MiniStage.java">
+    <entry file="file://$PROJECT_DIR$/src/test/java/Utility.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="744">
-          <caret line="41" lean-forward="true" selection-start-line="41" selection-end-line="41" />
+        <state>
+          <caret column="13" selection-start-column="13" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/CreateWorkItemOutput.java">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/CreateWorkItemUseCase.java">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/CreateWorkItemInput.java">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/InMemoryWorkItemRepository.java">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/WorkItem.java">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/WorkItemRepository.java">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/CreateWorkItemUseCaseTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#837#838#0" expanded="true" />
-            <element signature="e#867#868#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Stage.java">
+    <entry file="file://$PROJECT_DIR$/src/test/java/CreateStageUseCaseTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="512">
-          <caret line="34" column="18" selection-start-line="34" selection-start-column="18" selection-end-line="34" selection-end-column="18" />
+        <state relative-caret-position="-432">
+          <caret line="6" lean-forward="true" selection-start-line="6" selection-start-column="2" selection-end-line="28" selection-end-column="7" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#807#808#0" expanded="true" />
-            <element signature="e#840#841#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/CreateMiniStageUseCase.java">
+    <entry file="file://$PROJECT_DIR$/src/test/java/CreateSwimLaneUseCaseTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="168">
-          <caret line="9" column="22" selection-start-line="9" selection-start-column="22" selection-end-line="9" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/CreateSwimLaneUseCase.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="264">
-          <caret line="11" column="38" lean-forward="true" selection-start-line="11" selection-start-column="38" selection-end-line="11" selection-end-column="38" />
+        <state relative-caret-position="792">
+          <caret line="48" column="35" selection-start-line="48" selection-start-column="35" selection-end-line="48" selection-end-column="35" />
           <folding>
-            <element signature="e#147#148#0" expanded="true" />
-            <element signature="e#201#202#0" expanded="true" />
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -645,7 +749,7 @@
       </state>
       <state key="ModuleStructureConfigurable.UI">
         <settings>
-          <last-edited>main|Kanbon</last-edited>
+          <last-edited>Kanban</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>

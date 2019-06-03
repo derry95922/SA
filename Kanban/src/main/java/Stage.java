@@ -23,15 +23,15 @@ public class Stage {
         return stageId;
     }
 
-    public String getStageName() {
-        return name;
-    }
-
     public int getMiniStageSize() {
         return miniStages.size();
     }
 
-    public List<MiniStage> getMiniStageList() {
-        return miniStages;
+    public MiniStage getMiniStage(String miniStageId) {
+        for (int i=0;i<miniStages.size();i++){
+            if(miniStages.get(i).getMinStageId().equals(miniStageId))
+                return miniStages.get(i);
+        }
+        throw new RuntimeException("miniStage not found");
     }
 }
