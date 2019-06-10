@@ -15,13 +15,8 @@ public class MoveWorkItemUseCaseTest {
     @Before
     public void setUp(){
         workItemRepository = new InMemoryWorkItemRepository();
+        workItemId = Utility.createWorkItem(workItemRepository, "first work item");
 
-        CreateWorkItemUseCase createWorkItemUseCase = new CreateWorkItemUseCase(workItemRepository);
-        CreateWorkItemInput createWorkItemInput = new CreateWorkItemInput("first work item");
-        CreateWorkItemOutput createWorkItemOutput = new CreateWorkItemOutput();
-        createWorkItemUseCase.execute(createWorkItemInput,createWorkItemOutput);
-
-        workItemId = createWorkItemOutput.getWorkItemId();
         stageRepository = new InMemoryStageRepository();
         backlogId = Utility.createStage(stageRepository,1,"Backlog");
         backlog = stageRepository.findStage(backlogId);
@@ -30,7 +25,7 @@ public class MoveWorkItemUseCaseTest {
         assertEquals(0, backlog.getDefaultSwimLane().getCommittedWorkItems().size());
 
         CommitWorkItemUseCase commitWorkItemUseCase = new CommitWorkItemUseCase(stageRepository);
-        CommitWorkItemInput commitWorkItemInput = new CommitWorkItemInput(backlogId, backlog.getDefaultSwimLane().getSwimLaneId(), createWorkItemOutput.getWorkItemId());
+        CommitWorkItemInput commitWorkItemInput = new CommitWorkItemInput(backlogId, backlog.getDefaultSwimLane().getSwimLaneId(), workItemId);
         CommitWorkItemOutput commitWorkItemOutput = new CommitWorkItemOutput();
         commitWorkItemUseCase.execute(commitWorkItemInput,commitWorkItemOutput);
 

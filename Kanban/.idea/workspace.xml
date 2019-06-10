@@ -2,34 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9b74740a-9e0a-4295-98f5-0b4165f4da7e" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/CommitWorkItemInput.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/CommitWorkItemOutput.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/CommitWorkItemUseCase.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/MoveWorkItemInput.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/MoveWorkItemOutput.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/MoveWorkItemUseCase.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/CommitWorkItemUseCaseTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/MoveWorkItemUseCaseTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.10/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.10/fileHashes/fileHashes.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.10/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.10/fileHashes/fileHashes.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/CreateSwimLaneInput.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/CreateSwimLaneInput.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/CreateSwimLaneUseCase.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/CreateSwimLaneUseCase.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/InMemoryStageRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/InMemoryStageRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/MiniStage.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/MiniStage.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/Stage.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/Stage.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/StageRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/StageRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/SwimLane.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/SwimLane.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/test/classes/CreateMiniStageUseCaseTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/classes/CreateMiniStageUseCaseTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/test/classes/CreateStageUseCaseTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/classes/CreateStageUseCaseTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/test/classes/CreateSwimLaneTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/test/classes/META-INF/Kanbon.main.kotlin_module" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/InMemoryStageRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/InMemoryStageRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/MiniStage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MiniStage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Stage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Stage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/StageRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/StageRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/SwimLane.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/SwimLane.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/CreateStageUseCaseTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/CreateStageUseCaseTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/CommitWorkItemUseCaseTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/CommitWorkItemUseCaseTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/MoveWorkItemUseCaseTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/MoveWorkItemUseCaseTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/Utility.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Utility.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/.gradle/" />
@@ -50,11 +25,95 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/CommitWorkItemInput.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="312">
+              <caret line="18" column="26" selection-start-line="18" selection-start-column="26" selection-end-line="18" selection-end-column="26" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/InMemoryStageRepository.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="408">
+              <caret line="22" selection-start-line="22" selection-end-line="22" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/InMemoryWorkItemRepository.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="48">
+              <caret line="3" column="13" selection-start-line="3" selection-start-column="13" selection-end-line="3" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/java/CreateMiniStageUseCaseTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="192">
+              <caret line="10" column="40" selection-start-line="10" selection-start-column="40" selection-end-line="10" selection-end-column="40" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/java/CreateStageUseCaseTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="272">
+              <caret line="16" column="57" selection-start-line="16" selection-start-column="57" selection-end-line="16" selection-end-column="57" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/java/CreateSwimLaneUseCaseTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="360">
+              <caret line="20" column="19" selection-start-line="20" selection-start-column="19" selection-end-line="20" selection-end-column="19" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/java/CreateWorkItemUseCaseTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="336">
+              <caret line="16" column="14" selection-start-line="16" selection-start-column="14" selection-end-line="16" selection-end-column="14" />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/test/java/CommitWorkItemUseCaseTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="66">
+              <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/java/MoveWorkItemUseCaseTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="47">
+              <caret line="18" selection-start-line="18" selection-end-line="18" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/java/Utility.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="13" selection-start-column="13" selection-end-column="13" />
+            <state relative-caret-position="320">
+              <caret line="24" column="98" selection-start-line="24" selection-start-column="98" selection-end-line="24" selection-end-column="98" />
             </state>
           </provider>
         </entry>
@@ -77,23 +136,24 @@
       <list>
         <option value="$PROJECT_DIR$/src/test/java/CreateStageUseCaseTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/CommitWorkItem.java" />
-        <option value="$PROJECT_DIR$/src/test/java/CommitWorkItemUseCaseTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/CommitWorkItemUseCase.java" />
         <option value="$PROJECT_DIR$/src/main/java/CommitWorkItemInput.java" />
         <option value="$PROJECT_DIR$/src/main/java/Stage.java" />
         <option value="$PROJECT_DIR$/src/main/java/StageRepository.java" />
         <option value="$PROJECT_DIR$/src/main/java/InMemoryStageRepository.java" />
         <option value="$PROJECT_DIR$/src/main/java/MiniStage.java" />
-        <option value="$PROJECT_DIR$/src/test/java/MoveWorkItemUseCaseTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/MoveWorkItemUseCase.java" />
         <option value="$PROJECT_DIR$/src/main/java/MoveWorkItemInput.java" />
         <option value="$PROJECT_DIR$/src/main/java/SwimLane.java" />
+        <option value="$PROJECT_DIR$/src/test/java/Utility.java" />
+        <option value="$PROJECT_DIR$/src/test/java/MoveWorkItemUseCaseTest.java" />
+        <option value="$PROJECT_DIR$/src/test/java/CommitWorkItemUseCaseTest.java" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="640" />
-    <option name="width" value="733" />
+    <option name="x" value="676" />
+    <option name="width" value="697" />
     <option name="height" value="735" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -149,7 +209,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1560155402076" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1560156441187" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit4" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4" value="" />
   </component>
@@ -176,7 +236,15 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.MoveWorkItemUseCaseTest.moveWorkItemUseCase">
+  <component name="RunManager" selected="JUnit.All in Kanbon.test">
+    <configuration name="All in Kanbon.test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Kanbon.test" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="TEST_OBJECT" value="package" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="CommitWorkItemUseCaseTest.commitWorkItemTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Kanbon.test" />
       <option name="PACKAGE_NAME" value="" />
@@ -219,8 +287,9 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.MoveWorkItemUseCaseTest.moveWorkItemUseCase" />
+        <item itemvalue="JUnit.All in Kanbon.test" />
         <item itemvalue="JUnit.CommitWorkItemUseCaseTest.commitWorkItemTest" />
+        <item itemvalue="JUnit.MoveWorkItemUseCaseTest.moveWorkItemUseCase" />
         <item itemvalue="JUnit.CreateStageUseCaseTest.createStageInClass" />
         <item itemvalue="JUnit.CreateMiniStageUseCaseTest.CreateMiniStageInClass" />
       </list>
@@ -240,15 +309,6 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="CreateStageUseCaseTest_createStageInClass - 2019.06.10 at 11h 43m 03s.xml">
-      <configuration name="CreateStageUseCaseTest.createStageInClass" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="CreateStageUseCaseTest_createStageInClass - 2019.06.10 at 11h 43m 33s.xml">
-      <configuration name="CreateStageUseCaseTest.createStageInClass" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="CommitWorkItemUseCaseTest_commitWorkItemTest - 2019.06.10 at 14h 37m 43s.xml">
-      <configuration name="CommitWorkItemUseCaseTest.commitWorkItemTest" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="CommitWorkItemUseCaseTest_commitWorkItemTest - 2019.06.10 at 15h 21m 10s.xml">
       <configuration name="CommitWorkItemUseCaseTest.commitWorkItemTest" configurationId="JUnit" />
     </history-entry>
@@ -270,6 +330,15 @@
     <history-entry file="MoveWorkItemUseCaseTest_moveWorkItemUseCase - 2019.06.10 at 16h 27m 06s.xml">
       <configuration name="MoveWorkItemUseCaseTest.moveWorkItemUseCase" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="MoveWorkItemUseCaseTest_moveWorkItemUseCase - 2019.06.10 at 16h 45m 15s.xml">
+      <configuration name="MoveWorkItemUseCaseTest.moveWorkItemUseCase" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="CommitWorkItemUseCaseTest_commitWorkItemTest - 2019.06.10 at 16h 46m 30s.xml">
+      <configuration name="CommitWorkItemUseCaseTest.commitWorkItemTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="All_in_Kanbon_test - 2019.06.10 at 16h 46m 39s.xml">
+      <configuration name="All in Kanbon.test" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -280,13 +349,13 @@
       <window_info id="UI Designer" />
       <window_info id="Capture Tool" />
       <window_info id="Favorites" side_tool="true" weight="0.32967034" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.28895614" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.28895614" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Version Control" />
       <window_info anchor="bottom" id="Terminal" />
       <window_info anchor="bottom" id="Event Log" side_tool="true" />
       <window_info anchor="bottom" id="Build" weight="0.3289689" />
-      <window_info anchor="bottom" id="Messages" />
+      <window_info anchor="bottom" id="Messages" weight="0.3295082" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.31967214" />
@@ -336,63 +405,6 @@
     </layout-to-restore>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/test/java/CreateSwimLaneUseCaseTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="20" column="19" selection-start-line="20" selection-start-column="19" selection-end-line="20" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/CreateMiniStageUseCaseTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="192">
-          <caret line="10" column="40" selection-start-line="10" selection-start-column="40" selection-end-line="10" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/CreateWorkItemUseCaseTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="336">
-          <caret line="16" column="14" selection-start-line="16" selection-start-column="14" selection-end-line="16" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/CommitWorkItemOutput.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="13" selection-start-column="13" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/CreateStageUseCaseTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="239">
-          <caret line="16" column="57" selection-start-line="16" selection-start-column="57" selection-end-line="16" selection-end-column="57" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/CommitWorkItemInput.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="432">
-          <caret line="18" column="26" selection-start-line="18" selection-start-column="26" selection-end-line="18" selection-end-column="26" />
-          <folding>
-            <element signature="e#317#318#0" expanded="true" />
-            <element signature="e#347#348#0" expanded="true" />
-            <element signature="e#384#385#0" expanded="true" />
-            <element signature="e#416#417#0" expanded="true" />
-            <element signature="e#454#455#0" expanded="true" />
-            <element signature="e#486#487#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/InMemoryStageRepository.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="22" selection-start-line="22" selection-end-line="22" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/MoveWorkItemOutput.java">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -419,13 +431,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/InMemoryWorkItemRepository.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="48">
-          <caret line="3" column="13" selection-start-line="3" selection-start-column="13" selection-end-line="3" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/StageRepository.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
@@ -444,16 +449,6 @@
             <element signature="e#778#779#0" expanded="true" />
             <element signature="e#833#834#0" expanded="true" />
             <element signature="e#879#880#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/CommitWorkItemUseCaseTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="258">
-          <caret line="17" column="41" selection-start-line="17" selection-start-column="41" selection-end-line="17" selection-end-column="41" />
-          <folding>
-            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -492,17 +487,83 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/MoveWorkItemUseCaseTest.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/CommitWorkItemOutput.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="384">
-          <caret line="50" column="65" lean-forward="true" selection-start-line="50" selection-start-column="65" selection-end-line="50" selection-end-column="65" />
+        <state>
+          <caret column="13" selection-start-column="13" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/CommitWorkItemInput.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="312">
+          <caret line="18" column="26" selection-start-line="18" selection-start-column="26" selection-end-line="18" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/InMemoryStageRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="22" selection-start-line="22" selection-end-line="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/InMemoryWorkItemRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="48">
+          <caret line="3" column="13" selection-start-line="3" selection-start-column="13" selection-end-line="3" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/CreateMiniStageUseCaseTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="192">
+          <caret line="10" column="40" selection-start-line="10" selection-start-column="40" selection-end-line="10" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/CreateStageUseCaseTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="16" column="57" selection-start-line="16" selection-start-column="57" selection-end-line="16" selection-end-column="57" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/CreateSwimLaneUseCaseTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="20" column="19" selection-start-line="20" selection-start-column="19" selection-end-line="20" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/CreateWorkItemUseCaseTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="336">
+          <caret line="16" column="14" selection-start-line="16" selection-start-column="14" selection-end-line="16" selection-end-column="14" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/Utility.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="13" selection-start-column="13" selection-end-column="13" />
+        <state relative-caret-position="320">
+          <caret line="24" column="98" selection-start-line="24" selection-start-column="98" selection-end-line="24" selection-end-column="98" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/MoveWorkItemUseCaseTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="47">
+          <caret line="18" selection-start-line="18" selection-end-line="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/CommitWorkItemUseCaseTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="66">
+          <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

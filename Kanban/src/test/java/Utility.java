@@ -21,4 +21,13 @@ public class Utility {
 
         return createMiniStageOutputData.getMiniStageId();
     }
+
+    public static String createWorkItem(WorkItemRepository workItemRepository, String workItemName){
+        CreateWorkItemUseCase createWorkItemUseCase = new CreateWorkItemUseCase(workItemRepository);
+        CreateWorkItemInput createWorkItemInput = new CreateWorkItemInput(workItemName);
+        CreateWorkItemOutput createWorkItemOutput = new CreateWorkItemOutput();
+        createWorkItemUseCase.execute(createWorkItemInput,createWorkItemOutput);
+
+        return createWorkItemOutput.getWorkItemId();
+    }
 }
