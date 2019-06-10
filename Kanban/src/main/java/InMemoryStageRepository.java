@@ -17,5 +17,10 @@ public class InMemoryStageRepository implements StageRepository {
         }
         throw new RuntimeException("stage not found");
     }
+
+    @Override
+    public void update(Stage stage) {
+
+    }
 }
 

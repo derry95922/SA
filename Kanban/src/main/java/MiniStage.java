@@ -1,3 +1,5 @@
+import org.omg.SendingContext.RunTime;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
@@ -41,5 +43,25 @@ public class MiniStage {
                 return swimLanes.get(i);
         }
         throw new RuntimeException("Swim Lane not found");
+    }
+
+    public SwimLane getDefaultSwimLane() {
+        return swimLanes.get(0);
+    }
+
+    public boolean isSwimLaneExist(String swimLaneId) {
+        for(SwimLane swimLane: swimLanes){
+            if(swimLane.getSwimLaneId().equals(swimLaneId))
+                return true;
+        }
+        return false;
+    }
+
+    public SwimLane getSwimLaneById(String swimLaneId) {
+        for(SwimLane swimLane: swimLanes){
+            if(this.isSwimLaneExist(swimLaneId) && swimLane.getSwimLaneId().equals(swimLaneId))
+                return swimLane;
+        }
+        throw new RuntimeException("SwimLane not found");
     }
 }
